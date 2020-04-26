@@ -1,0 +1,31 @@
+.overlay{
+    height: 100%;
+    width: 100%;
+
+    align-content: center;
+
+    position: fixed;
+    z-index: 1;
+
+    background-color: aliceblue;
+}
+
+.cards-container{
+    height: 90vw;
+    width: 90vw;
+
+    margin: 4vw 4vw 4vw 4vw;
+    align-content: center;
+    z-index: 2;
+
+    background-color: aliceblue;
+}
+
+.cards{
+    height: 30%;
+    width: 30%;
+    margin: 1% 1% 1% 1%;
+
+    background-color: beige;
+    display: inline-block;
+}
