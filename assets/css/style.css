@@ -10,20 +10,29 @@
     background-color: ghostwhite;
 }
 
+.container-flex{
+    display: block;
+    text-align:center;
+    padding: 4% 6% 4%;
+    margin: 0 auto;
+    position: absolute;
+}
+
 .screen-text{
+    font-size: 3.6rem;
+    margin-top: 30%;
     text-align: center;
-    font-size: 8vw;
 }
 
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#button-start{
+    font-size: 3rem;
+    margin-top: 5%;
 }
 
-#button-screen-1{
-    top: 20%;
-    position: relative;
+#button-top-right{
+    position: absolute;
+    margin-right: 2%;
+    margin-top: 2%;
 }
 
 .cards-container{
