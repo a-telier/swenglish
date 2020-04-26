@@ -7,7 +7,23 @@
     position: fixed;
     z-index: 1;
 
-    background-color: aliceblue;
+    background-color: ghostwhite;
+}
+
+.screen-text{
+    text-align: center;
+    font-size: 8vw;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#button-screen-1{
+    top: 20%;
+    position: relative;
 }
 
 .cards-container{
