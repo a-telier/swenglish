@@ -11,11 +11,26 @@ $("#button-back").click(function() {
 
 function initializeCards(){
     var cardPlaceholders = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    var cardPairs = ["bröd", "hallon", "kaffe", "kanelbulle"];
+    var cards = [];
 
+    //this turns the cardPairs list into 8 elements
+    cardPairs.forEach(cardPair => {
+        var cardImageUrl = "url('/assets/img/" + cardPair + ".jpg')";
+        var cardTextUrl = "url('/assets/img/" + cardPair + "-text.jpg')";
+
+        cards.push(cardImageUrl, cardTextUrl);
+    });
+
+    //this fills in the placeholders
     cardPlaceholders.forEach(cardPlaceholder => {
         var cardID = "#card-" + cardPlaceholder;
         
-        $(cardID).css('background-image', 'url("/assets/img/kanelbulle-text.jpg")');
+        var cardNumberToUse = Math.floor(Math.random() * 8);
+        var cardToUse = cards[cardNumberToUse];
+
+
+        $(cardID).css('background-image', cardToUse);
         console.log("image set on placeholder");
     });
 }

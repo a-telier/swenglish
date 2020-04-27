@@ -66,25 +66,23 @@
 
     margin: 4vw 4vw 4vw;
     align-content: center;
-
-    background-color: aliceblue;
 }
 
 /*this needs to be done via function in js not in css*/
-#card-1{
-    background-image: url("/assets/img/kanelbulle.jpg");
+/*#card-1{
+    background-image: url("/assets/img/kanelbulle/kanelbulle.jpg");
 }
 
 #card-8{
-    background-image: url("/assets/img/kanelbulle-text.jpg");
-}
+    background-image: url("/assets/img/kanelbulle/kanelbulle-text.jpg");
+}*/
 
 .cards{
     height: 30%;
     width: 30%;
     margin: 1% 1% 1% 1%;
 
-    background-color: beige;
+    border:black solid 1px;
     display: inline-block;
 
     background-size: cover;
