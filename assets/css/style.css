@@ -11,9 +11,9 @@
 }
 
 /*--------------------------------------------temporarily hidden to work on screen-2*/
-#screen-1{
+/*#screen-1{
     display: none;
-}
+}*/
 
 .container-flex{
     display: block;
