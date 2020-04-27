@@ -6,12 +6,12 @@ $("#button-start").click(function() {
 
 //Screen 2 - cards game
 $("#button-back").click(function() {
-  $("#screen-1").fadeIn('slow');
+  $("#screen-1").fadeIn('fast');
 });
 
 function initializeCards(){
     var cardPlaceholders = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    var cardPairs = ["bröd", "hallon", "kaffe", "kanelbulle"];
+    var cardPairs = ["brod", "appelpaj", "kaffe", "kanelbulle", "hallon"];
     var cards = [];
 
     //this turns the cardPairs list into 8 elements
@@ -29,8 +29,11 @@ function initializeCards(){
         var cardNumberToUse = Math.floor(Math.random() * 8);
         var cardToUse = cards[cardNumberToUse];
 
-
-        $(cardID).css('background-image', cardToUse);
+        /*if(placeHolderSet = false){*/
+            $(cardID).css('background-image', cardToUse);
+            /*placeHolderSet = true;
+        }*/
+        
         console.log("image set on placeholder");
     });
 }
