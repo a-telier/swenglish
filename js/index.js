@@ -9,6 +9,39 @@ $("#button-back").click(function() {
   $("#screen-1").fadeIn('fast');
 });
 
+function uniqueRandomList(listLenght){
+    var uniqueList = [];
+    var listAvailablePlaceholders = [];
+    
+
+    //this fills in the listAvailablePlaceholders with a unique value
+    //we could have written a list, however if lenght of list changed = then code would not work anymore
+
+    //the loop runs the times of listLenght ex. 14
+    for (let index = 1; index <= listLenght; index++) {
+        listAvailablePlaceholders.push(index);
+    }
+
+    //the loop runs the times of listLenght ex. 14
+    for (let index = 1; index <= listLenght; index++) {
+        //Creates a random number ex. between 0 and 13 as 14 positions startin with 0
+        //Every time it runs the list removes 1 element from available values
+        let randomNumber = Math.floor(Math.random() * (listAvailablePlaceholders.length - 1));
+        console.log(randomNumber);
+
+        //Removes the random number generated from the list of available placeholders
+        let availablePlaceholder = listAvailablePlaceholders.splice(randomNumber, 1);
+
+        //Adds that random number within the available placeholders to the unique results list
+        uniqueList.push(availablePlaceholder);
+
+        console.log("This" + availablePlaceholder + "placeholder has been used");
+    }
+
+    return uniqueList;
+}
+
+
 function initializeCards(){
     var cardPlaceholders = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     var cardPairs = ["brod", "appelpaj", "kaffe", "kanelbulle", "hallon"];
@@ -25,7 +58,8 @@ function initializeCards(){
     //this calls the below function to create a list of unique generated numbers
     //the list will have as many positions as we have cards
     //the values in parenthesis are the parameter ex. integer number
-    var uniqueCardToUseList = uniqueRandomList(cards.lenght);
+    var uniqueCardToUseList = uniqueRandomList(cards.length);
+    console.log(uniqueCardToUseList);
 
 
     //this fills in the placeholders
@@ -54,31 +88,3 @@ function initializeCards(){
 //     });
 // }
 
-function uniqueRandomList (listLenght){
-    var uniqueList = [];
-    var listAvailablePlaceholders = [];
-    
-
-    //this fills in the listAvailablePlaceholders with a unique value
-    //we could have written a list, however if lenght of list changed = then code would not work anymore
-
-    //the loop runs the times of listLenght ex. 14
-    for (let index = 1; index <= listLenght; index++) {
-        listAvailablePlaceholders.push(index);
-    }
-
-    //the loop runs the times of listLenght ex. 14
-    for (let index = 1; index <= listLenght; index++) {
-        //Creates a random number ex. between 0 and 13 as 14 positions startin with 0
-        //Every time it runs the list removes 1 element from available values
-        let randomNumber = Math.floor(Math.random() * (listAvailablePlaceholders.lenght - 1));
-
-        //Removes the random number generated from the list of available placeholders
-        let availablePlaceholder = listAvailablePlaceholders.pop(randomNumber);
-
-        //Adds that random number within the available placeholders to the unique results list
-        uniqueList.push(availablePlaceholder);
-
-        console.log("This" + availablePlaceholder + "placeholder has been used");
-    }
-}
