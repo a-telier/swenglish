@@ -34,7 +34,6 @@ function initializeCards(){
         let cardPlaceholder = cardPlaceholders[index];
         let uniqueCardToUse = uniqueCardToUseList[index];
 
-<<<<<<< HEAD
         let cardID = "#card-" + cardPlaceholder;
         let cardToUse = cards[uniqueCardToUse];
 
@@ -76,16 +75,6 @@ function uniqueRandomList (listLenght){
 
         //Removes the random number generated from the list of available placeholders
         let availablePlaceholder = listAvailablePlaceholders.pop(randomNumber);
-=======
-        /*if(placeHolderSet = false){*/
-            $(cardID).css('background-image', cardToUse);
-            /*placeHolderSet = true;
-        }*/
-        
-        console.log("image set on placeholder");
-    });
-}
->>>>>>> 5d7455e581f0614b7fc0d13a7b8594f532e0bebd
 
         //Adds that random number within the available placeholders to the unique results list
         uniqueList.push(availablePlaceholder);
