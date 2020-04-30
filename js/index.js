@@ -43,14 +43,14 @@ function uniqueRandomList(listLenght){
 
 
 function initializeCards(){
-    var cardPlaceholders = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    var cardPairs = ["brod", "appelpaj", "kaffe", "kanelbulle", "hallon"];
+    var cardPlaceholders = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    var cardPairs = ["appelpaj", "blabar", "brod", "hallon", "kaffe", "kanelbulle"];
     var cards = [];
 
     //this turns the cardPairs list into 8 elements
     cardPairs.forEach(cardPair => {
-        var cardImageUrl = "url('/assets/img/" + cardPair + ".jpg')";
-        var cardTextUrl = "url('/assets/img/" + cardPair + "-text.jpg')";
+        var cardImageUrl = "url('/assets/img/level-1/" + cardPair + ".jpg')";
+        var cardTextUrl = "url('/assets/img/level-1/" + cardPair + "-text.jpg')";
 
         cards.push(cardImageUrl, cardTextUrl);
     });

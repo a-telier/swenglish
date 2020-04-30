@@ -1,25 +1,25 @@
 #screen-1{
-    height: 1024px;
+    height: 1400px;
     width: 100%;
+
+    /*temporarily hide screen 1*/
+    display: none;
+
 }
 
 .overlay{
     align-content: center;
-    
-    height: 1024px;
+
+    height: 1400px;
     width: 100%;
 
-    position: absolute;
+    position: fixed;
+    cursor: pointer;
     z-index: 1;
 
     background-color: ghostwhite;
     background-size: cover;
 }
-
-/*--------------------------------------------temporarily hidden to work on screen-2*/
-/*#screen-1{
-    display: none;
-}*/
 
 .container-flex{
     display: block;
@@ -31,7 +31,7 @@
 
 .screen-text{
     font-size: 3.6rem;
-    margin-top: 30%;
+    margin-top: 24%;
     text-align: center;
 }
 
@@ -42,36 +42,53 @@
 
 #screen-2{
     width: 100%;
-    height: 100%;
+    height: 1200px;
 
+    margin: auto;
+    content: center;
+    text-align: center;
+
+    position: fixed;
+    cursor: pointer;
     z-index: 2;
 }
 
-.container-btn-back{
-    height: 10vw;
-    margin: auto;
-    padding-right: 2vw;
-    text-align:center;
-
+#container-btn-back{
+    height: 6px;
+    width: 100%;
+    
+    position: fixed;
     display: block;
 }
 
 #button-back{
-    position: relative;
-    margin-right: 8%;
-    margin-top: 2%;
+    position: fixed;
 
-    font-size: 2.2em;
+    height: 6%;
+    width: 25%;
+
+    top: 4px;
+    bottom: 4px;
+    left: 6px;
+
+    padding: 2px 2px 2px;
+
+    font-size: 1.8em;
+
+    text-align: center;
 }
 
 .cards-container{
-    height: 90vw;
-    width: 90vw;
+    height: 90%;
+    width: 100%;
 
-    position: relative;
+    position: inherit;
 
-    margin: 4vw 4vw 4vw;
+    top: 10%;
+    bottom: 4px;
+
     align-content: center;
+    text-align: center;
 }
 
 /*this needs to be done via function in js not in css*/
@@ -84,8 +101,8 @@
 }*/
 
 .cards{
-    height: 30%;
-    width: 30%;
+    height: 110px;
+    width: 110px;
     margin: 1% 1% 1% 1%;
 
     border:black solid 1px;
