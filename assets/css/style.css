@@ -1,13 +1,16 @@
-.overlay{
-    height: 100%;
+#screen-1{
+    height: 1024px;
     width: 100%;
+}
 
+.overlay{
     align-content: center;
 
-    position: fixed;
+    position: absolute;
     z-index: 1;
 
     background-color: ghostwhite;
+    background-size: cover;
 }
 
 /*--------------------------------------------temporarily hidden to work on screen-2*/
@@ -78,7 +81,7 @@
 }*/
 
 .cards{
-    height: 30%;
+    height: 1024px;
     width: 30%;
     margin: 1% 1% 1% 1%;
 
@@ -88,3 +91,4 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+
