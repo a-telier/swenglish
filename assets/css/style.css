@@ -1,38 +1,61 @@
-#screen-1{
-    height: 1400px;
+#cover-image{
+    height: 1200px;
     width: 100%;
 
-    /*temporarily hide screen 1*/
-    display: none;
+    background-image: url("/assets/img/sverige-flag.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
+    animation-name: image-zoom;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes image-zoom {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.1);
+    }
 }
 
 .overlay{
     align-content: center;
 
-    height: 1400px;
+    height: 1200px;
     width: 100%;
 
     position: fixed;
     cursor: pointer;
     z-index: 1;
 
-    background-color: ghostwhite;
-    background-size: cover;
+    /*temporarily hide screen 1
+    display: none;*/
 }
 
-.container-flex{
+/*.container-flex{
+    height: 1200px;
+    width: 100%;
+
     display: block;
+    position: absolute;
+
     text-align:center;
     padding: 4% 6% 4%;
     margin: 0 auto;
-    position: absolute;
-}
+}*/
 
-.screen-text{
-    font-size: 3.6rem;
+#cover-text{
+    height: 600px;
+    width: 80%;
+
+    font-size: 3.rem;
     margin-top: 24%;
     text-align: center;
+
+    color: white;
 }
 
 #button-start{
@@ -48,16 +71,18 @@
     content: center;
     text-align: center;
 
-    position: fixed;
+    position: inherit;
     cursor: pointer;
     z-index: 2;
+
+    display: none;
 }
 
 #container-btn-back{
     height: 6px;
     width: 100%;
     
-    position: fixed;
+    position: relative;
     display: block;
 }
 
@@ -82,30 +107,23 @@
     height: 90%;
     width: 100%;
 
-    position: inherit;
+    position: absolute;
 
     top: 10%;
     bottom: 4px;
 
     align-content: center;
     text-align: center;
-}
 
-/*this needs to be done via function in js not in css*/
-/*#card-1{
-    background-image: url("/assets/img/kanelbulle/kanelbulle.jpg");
+    overflow: hidden;
 }
-
-#card-8{
-    background-image: url("/assets/img/kanelbulle/kanelbulle-text.jpg");
-}*/
 
 .cards{
     height: 110px;
     width: 110px;
     margin: 1% 1% 1% 1%;
 
-    border:black solid 1px;
+    border: darkgray solid 1px;
     display: inline-block;
 
     background-size: cover;
