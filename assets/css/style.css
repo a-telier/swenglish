@@ -111,8 +111,16 @@ section{
     background-repeat: no-repeat;
 }
 
-.redBorder{
-    border-color: red;
+.cardSelected{
+    border: red;
+    border-style: solid;
+    background-image: none;
+}
+
+.cardClickedGreen{
+    border:green;
+    border-style: solid;
+    background-image: none; 
 }
 
 /*-----------------------------media queries*/

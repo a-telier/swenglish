@@ -39,7 +39,6 @@ function uniqueRandomList(listLenght){
     return uniqueList;
 }
 
-
 function initializeCards(){
     var cardPlaceholders = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
     var cardPairs = ["blabar", "brod", "hallon", "kaffe", "kanelbulle", "appelpaj"];
@@ -70,13 +69,37 @@ function initializeCards(){
         var cardToUse = cards[uniqueCardToUse];
 
         $(cardID).css('background-image', cardToUse);
-
         console.log("This is the cardID: " + cardID + "; and this is the background-image to use:" + cardToUse);
     }
 };
 
-console.log("cards")
-
-// $("#card-1").hover(function(){
-// 	$(this).addClass(redBorder).removeClass(noBorder);
+// $( "#card-1").click(function() {
+//   $(this).toggleClass("cardClicked");
 // });
+
+//displays styling over clicked elements of type card
+const cards = document.querySelectorAll(".cards")
+
+for (const card of cards) {
+    card.addEventListener('click', function() {
+        $(this).toggleClass("cardSelected");
+  })
+}
+
+    // for (const cardsQuery of cardsQueries) {
+//     cardsQuery.addEventListener('click', function() {
+//         $(this).toggleClass(".cardSelected");
+
+//         console.log("cardSelected");
+
+//     //     if (cardsSelectedQuery.length = 2) {
+//     //         cardPairs.forEach(cardPair => {
+//     //             if (cardsSelectedQuery[0].contains(cardPair)) AND (cardsSelectedQuery[1].contains(cardPair)) {
+//     //                 $(cardsSelectedQuery[0, 1]).css("border", "green");
+
+
+    
+// if (cards.includes(cardPairs)) {
+//     $(this).toggleClass("cardClickedApproved")
+//     console.log("Yes, 10 points for Griffindor!")
+// }
