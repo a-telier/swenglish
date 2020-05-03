@@ -1,22 +1,24 @@
-#screen-1{
-    height: 900px;
+section{
     width: 100%;
+    height: 100%;
+}
 
+#screen-1{
     display: block;
     overflow: hidden;
 }
 
 #cover-image{
-    height: 900px;
+    height: 100%;
     width: 100%;
 
     background: url("/assets/img/sverige-flag.jpg") no-repeat center center;
     background-size: cover;
     position: absolute;
-    z-index: -1;
+    z-index: 3;
 
     animation-name: image-zoom;
-    animation-duration: 5s;
+    animation-duration: 10s;
     animation-fill-mode: forwards;
 }
 
@@ -25,35 +27,24 @@
         transform: scale(1);
     }
     to{
-        transform: scale(1.1);
+        transform: scale(1.2);
     }
 }
 
-/*.overlay{
-    align-content: center;
-
-    height: 1200px;
-    width: 100%;
-
-    position: fixed;
-    cursor: pointer;
-    z-index: 1;
-
-    temporarily hide screen 1
-    display: none;
-}*/
-
 #cover-text{
-    height: 60%;
+    height: 45%;
     width: 85%;
 
-    font-size: 3em;
     text-align: center;
     color: whitesmoke;
 
-    margin: auto;
-    margin-top: 15%;
+    margin-top: 16%;
+    margin-left: 10%;
+    margin-right: 10%;
+
     padding: 26px 24px 20px 24px;
+    position: absolute;
+    z-index: 4;
 
     background-color: rgba(7, 14, 36, 0.7);
 }
@@ -64,9 +55,6 @@
 }
 
 #screen-2{
-    width: 100%;
-    height: 1200px;
-
     margin: auto;
     content: center;
     text-align: center;
@@ -74,8 +62,6 @@
     position: inherit;
     cursor: pointer;
     z-index: 2;
-
-    display: none;
 }
 
 #container-btn-back{
@@ -87,19 +73,16 @@
 }
 
 #button-back{
-    position: fixed;
-
     height: 6%;
     width: 25%;
 
     top: 4px;
     bottom: 4px;
     left: 6px;
-
     padding: 2px 2px 2px;
+    position: fixed;
 
-    font-size: 1.8em;
-
+    font-size: 1.75em;
     text-align: center;
 }
 
@@ -130,3 +113,29 @@
     background-repeat: no-repeat;
 }
 
+/*-----------------------------media queries*/
+/*ipad screens only - over 1000px width*/
+@media screen and (min-width: 768px){
+#cover-text{
+    margin-top: 24%;
+}
+#cover-text h2{
+    font-size: 3em;
+}
+}
+
+/*mobile screens - under 480px width*/
+@media screen and (max-width: 480px){
+#cover-text{
+    height: 65%;
+    width: 85%;
+}
+}
+
+/*very small mobile screens - under 320px width*/
+@media screen and (max-width: 320px){
+#cover-text{
+    height: 85%;
+    width: 85%;
+}
+}
