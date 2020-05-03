@@ -91,14 +91,12 @@ section{
     width: 100%;
 
     position: absolute;
-
+    overflow: hidden;
     top: 10%;
     bottom: 4px;
 
     align-content: center;
     text-align: center;
-
-    overflow: hidden;
 }
 
 .cards{
@@ -111,6 +109,10 @@ section{
 
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.redBorder{
+    border-color: red;
 }
 
 /*-----------------------------media queries*/
