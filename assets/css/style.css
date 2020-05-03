@@ -1,11 +1,19 @@
-#cover-image{
-    height: 1200px;
+#screen-1{
+    height: 900px;
     width: 100%;
 
-    background-image: url("/assets/img/sverige-flag.jpg");
-    background-position: center;
+    display: block;
+    overflow: hidden;
+}
+
+#cover-image{
+    height: 900px;
+    width: 100%;
+
+    background: url("/assets/img/sverige-flag.jpg") no-repeat center center;
     background-size: cover;
-    background-repeat: no-repeat;
+    position: absolute;
+    z-index: -1;
 
     animation-name: image-zoom;
     animation-duration: 5s;
@@ -21,7 +29,7 @@
     }
 }
 
-.overlay{
+/*.overlay{
     align-content: center;
 
     height: 1200px;
@@ -31,31 +39,23 @@
     cursor: pointer;
     z-index: 1;
 
-    /*temporarily hide screen 1
-    display: none;*/
-}
-
-/*.container-flex{
-    height: 1200px;
-    width: 100%;
-
-    display: block;
-    position: absolute;
-
-    text-align:center;
-    padding: 4% 6% 4%;
-    margin: 0 auto;
+    temporarily hide screen 1
+    display: none;
 }*/
 
 #cover-text{
-    height: 600px;
-    width: 80%;
+    height: 60%;
+    width: 85%;
 
-    font-size: 3.rem;
-    margin-top: 24%;
+    font-size: 3em;
     text-align: center;
+    color: whitesmoke;
 
-    color: white;
+    margin: auto;
+    margin-top: 15%;
+    padding: 26px 24px 20px 24px;
+
+    background-color: rgba(7, 14, 36, 0.7);
 }
 
 #button-start{
