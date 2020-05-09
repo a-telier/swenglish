@@ -1,6 +1,7 @@
 var cardPlaceholders;
 var cardPairs;
 var cardUrls;
+
 //selects all cards
 const allCards = document.querySelectorAll(".cards")
 
@@ -88,8 +89,6 @@ function initializeCards(){
     }
 };
 
-
-
 //displays styling over clicked elements of type card
 for (const card of allCards) {
     card.addEventListener('click', function() {
@@ -105,6 +104,8 @@ for (const card of allCards) {
             let card2 = cardsClicked[1];
 
             if ($(card1).data("cardPair") == $(card2).data("cardPair")) {
+                $(card1).css({"background-image":"none", "background-color":"green"});
+                $(card2).css({"background-image":"none", "background-color":"green"});
                 console.log("Good job!");
             } else {
                 console.log("Bad job :(");
