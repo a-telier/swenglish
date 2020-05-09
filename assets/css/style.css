@@ -37,16 +37,16 @@ section{
 
     text-align: center;
     color: whitesmoke;
-
-    margin-top: 16%;
-    margin-left: 10%;
-    margin-right: 10%;
-
-    padding: 26px 24px 20px 24px;
-    position: absolute;
-    z-index: 4;
-
     background-color: rgba(7, 14, 36, 0.7);
+
+    position: fixed;
+
+    padding: 22px 24px 20px;
+    top: 10%;
+    right: 7.5%;
+    left: 7.5%;
+
+    z-index: 4;
 }
 
 #button-start{
@@ -55,6 +55,7 @@ section{
 }
 
 #screen-2{
+    display: block;
     margin: auto;
     content: center;
     text-align: center;
@@ -112,8 +113,8 @@ section{
 }
 
 .cardSelected{
-    border: red;
-    border-style: solid;
+    border: grey;
+    border-style: dotted;
     background-image: none;
 }
 
@@ -124,10 +125,10 @@ section{
 }
 
 /*-----------------------------media queries*/
-/*ipad screens only - over 1000px width*/
+/*ipad screens only - under 1000px width*/
 @media screen and (min-width: 768px){
 #cover-text{
-    margin-top: 24%;
+    margin-top: 18%;
 }
 #cover-text h2{
     font-size: 3em;

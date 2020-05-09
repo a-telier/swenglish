@@ -1,3 +1,9 @@
+var cardPlaceholders;
+var cardPairs;
+var cardUrls;
+//selects all cards
+const allCards = document.querySelectorAll(".cards")
+
 //Screen 1 - start menu
 $("#button-start").click(function() {
   $("#screen-1").fadeOut('slow');
@@ -7,6 +13,7 @@ $("#button-start").click(function() {
 //Screen 2 - cards game
 $("#button-back").click(function() {
   $("#screen-1").fadeIn('fast');
+  $(allCards).removeClass('cardSelected');
 });
 
 function uniqueRandomList(listLenght){
@@ -40,9 +47,9 @@ function uniqueRandomList(listLenght){
 }
 
 function initializeCards(){
-    var cardPlaceholders = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-    var cardPairs = ["blabar", "brod", "hallon", "kaffe", "kanelbulle", "appelpaj"];
-    var cards = [];
+    cardPlaceholders = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    cardPairs = ["blabar", "brod", "hallon", "kaffe", "kanelbulle", "appelpaj"];
+    cardUrls = [];
 
     //this turns the cardPairs list into 8 elements
     cardPairs.forEach(cardPair => {
@@ -51,13 +58,13 @@ function initializeCards(){
         var cardImageUrl = "url('/assets/img/level-1/" + cardPair + ".jpg')";
         var cardTextUrl = "url('/assets/img/level-1/" + cardPair + "-text.jpg')";
 
-        cards.push(cardImageUrl, cardTextUrl);
+        cardUrls.push(cardImageUrl, cardTextUrl);
     });
 
     //this calls the below function to create a list of unique generated numbers
     //the list will have as many positions as we have cards
     //the values in parenthesis are the parameter ex. integer number
-    var uniqueCardToUseList = uniqueRandomList(cards.length);
+    var uniqueCardToUseList = uniqueRandomList(cardUrls.length);
 
     //this fills in the placeholders
     //if index is bigger than 0 then keep looping as many times as cardPlaceholders.lenght
@@ -66,40 +73,45 @@ function initializeCards(){
         var uniqueCardToUse = uniqueCardToUseList[index];
 
         var cardID = "#card-" + cardPlaceholder;
-        var cardToUse = cards[uniqueCardToUse];
+        var cardToUse = cardUrls[uniqueCardToUse];
 
         $(cardID).css('background-image', cardToUse);
         console.log("This is the cardID: " + cardID + "; and this is the background-image to use:" + cardToUse);
+
+        //Find associated cardPair
+        cardPairs.forEach(cardPair => {
+            //This should only be twice once in the whole loop
+            if (cardToUse.includes(cardPair)) {
+                $(cardID).data("cardPair", cardPair);
+            }
+        });
     }
 };
 
-// $( "#card-1").click(function() {
-//   $(this).toggleClass("cardClicked");
-// });
+
 
 //displays styling over clicked elements of type card
-const cards = document.querySelectorAll(".cards")
-
-for (const card of cards) {
+for (const card of allCards) {
     card.addEventListener('click', function() {
         $(this).toggleClass("cardSelected");
-  })
+
+        //selects all clicked cards
+        const cardsClicked = document.querySelectorAll(".cardSelected")
+        console.log("Cards currently selected: " + cardsClicked.length);
+        
+        if(cardsClicked.length == 2) {
+            //You have selected 2 card - are they matching?
+            let card1 = cardsClicked[0];
+            let card2 = cardsClicked[1];
+
+            if ($(card1).data("cardPair") == $(card2).data("cardPair")) {
+                console.log("Good job!");
+            } else {
+                console.log("Bad job :(");
+            }
+            $(card1).removeClass("cardSelected");
+            $(card2).removeClass("cardSelected");
+        }
+    })
 }
 
-    // for (const cardsQuery of cardsQueries) {
-//     cardsQuery.addEventListener('click', function() {
-//         $(this).toggleClass(".cardSelected");
-
-//         console.log("cardSelected");
-
-//     //     if (cardsSelectedQuery.length = 2) {
-//     //         cardPairs.forEach(cardPair => {
-//     //             if (cardsSelectedQuery[0].contains(cardPair)) AND (cardsSelectedQuery[1].contains(cardPair)) {
-//     //                 $(cardsSelectedQuery[0, 1]).css("border", "green");
-
-
-    
-// if (cards.includes(cardPairs)) {
-//     $(this).toggleClass("cardClickedApproved")
-//     console.log("Yes, 10 points for Griffindor!")
-// }
