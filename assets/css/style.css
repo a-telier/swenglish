@@ -16,7 +16,7 @@ section{
     background: url("/assets/img/sverige-flag.jpg") no-repeat center center;
     background-size: cover;
     position: absolute;
-    z-index: 3;
+    z-index: 5;
 
     animation-name: image-zoom;
     animation-duration: 10s;
@@ -32,7 +32,7 @@ section{
     }
 }
 
-#cover-text{
+.cover-text{
     height: 45%;
     width: 85%;
 
@@ -46,8 +46,10 @@ section{
     top: 10%;
     right: 7.5%;
     left: 7.5%;
+}
 
-    z-index: 4;
+#cover-text-start{
+    z-index: 6;
 }
 
 #button-start{
@@ -57,19 +59,24 @@ section{
 
 /*--------------------------------------------------screen2*/
 #screen-2{
+    height: 100%;
+    width: 100%;
+
     display: block;
     margin: auto;
     content: center;
     text-align: center;
-
     position: inherit;
     cursor: pointer;
-    z-index: 2;
+
+    z-index: 4;
 }
 
 #container-btn-back{
     height: 6px;
     width: 100%;
+
+    background-color: antiquewhite;
     
     position: relative;
     display: block;
@@ -89,14 +96,13 @@ section{
     text-align: center;
 }
 
-.cards-container{
-    height: 90%;
+.container{
+    height: 100%;
     width: 100%;
-
     position: absolute;
     overflow: scroll;
-    top: 10%;
-    bottom: 4px;
+
+    background-color: antiquewhite;
 }
 
 .cards{
@@ -108,6 +114,13 @@ section{
     display: inline-block;
     background-size: cover;
     background-repeat: no-repeat;
+
+    z-index: inherit;
+}
+
+#container-card{
+    top: 10%;
+    z-index: 4;
 }
 
 .cardSelected{
@@ -128,10 +141,25 @@ section{
 .container{
     width: 100%;
     height: 100%;
+
+    display: block;
+    margin: auto;
+    content: center;
+
+    position: inherit;
+    cursor: pointer;
     align-content: center;
     text-align: center;
 
-    background-color: whitesmoke;
+    background-color: grey;
+}
+
+#container-end{
+    z-index: 1 !important;
+}
+
+#button-try-again{
+    z-index: inherit;
 }
 
 
@@ -142,10 +170,10 @@ section{
     height: 110px;
     width: 110px;
 }
-#cover-text{
+.cover-text{
     margin-top: 18%;
 }
-#cover-text h2{
+.cover-text h2{
     font-size: 3em;
 }
 }
@@ -156,7 +184,7 @@ section{
     height: 110px;
     width: 110px;
 }
-#cover-text{
+.cover-text{
     height: 65%;
     width: 85%;
 }
@@ -168,7 +196,7 @@ section{
     height: 90px;
     width: 90px;
 }
-#cover-text{
+.cover-text{
     height: 85%;
     width: 85%;
 }

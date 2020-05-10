@@ -7,16 +7,24 @@ const allCards = document.querySelectorAll(".cards")
 
 //Screen 1 - start menu
 $("#button-start").click(function() {
-  $("#screen-1").fadeOut('slow');
-  initializeCards();
+    $("#screen-1").fadeOut('slow');
+    initializeCards();
 });
 
 //Screen 2 - cards game
 $("#button-back").click(function() {
-  $("#screen-1").fadeIn('fast');
-  $(allCards).removeClass('cardSelected');
-  $(allCards).removeClass('cardGreen');
+    $("#screen-1").fadeIn('fast');
+    $(allCards).removeClass('cardSelected');
+    $(allCards).removeClass('cardGreen');
 });
+
+//Screen 3 - try again
+$("#button-try-again").click(function(){
+    $("#screen-2").fadeIn('fast');
+    $(allCards).removeClass('cardSelected');
+    $(allCards).removeClass('cardGreen');
+    initializeCards();
+})
 
 function uniqueRandomList(listLenght){
     var uniqueList = [];
