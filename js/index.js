@@ -15,6 +15,7 @@ $("#button-start").click(function() {
 $("#button-back").click(function() {
   $("#screen-1").fadeIn('fast');
   $(allCards).removeClass('cardSelected');
+  $(allCards).removeClass('cardGreen');
 });
 
 function uniqueRandomList(listLenght){
@@ -112,6 +113,14 @@ for (const card of allCards) {
             }
             $(card1).removeClass("cardSelected");
             $(card2).removeClass("cardSelected");
+        }
+        //selects all green/good cards
+        const cardsGreen = document.querySelectorAll(".cardGreen")
+
+        if(cardsGreen.length == 12) {
+            $("#screen-2").fadeOut('slow');
+            $("#screen-3").fadeIn('fast');
+            console.log("You won!");
         }
     })
 }
