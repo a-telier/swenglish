@@ -37,3 +37,11 @@ We continually tweak and adjust this template to help give you the best experien
 --------
 
 Happy coding!
+
+
+
+====================
+
+The timer countdown comes from: https://scotch.io/tutorials/create-a-cssjs-countdown-timer
+
+FLip effect from: https://www.w3schools.com/howto/howto_css_flip_card.asp

@@ -132,4 +132,3 @@ for (const card of allCards) {
         }
     })
 }
-
