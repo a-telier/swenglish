@@ -104,8 +104,8 @@ for (const card of allCards) {
             let card2 = cardsClicked[1];
 
             if ($(card1).data("cardPair") == $(card2).data("cardPair")) {
-                $(card1).css({"background-image":"none", "background-color":"green"});
-                $(card2).css({"background-image":"none", "background-color":"green"});
+                $(card1).removeClass("cardSelected").addClass("cardGreen");
+                $(card2).removeClass("cardSelected").addClass("cardGreen");
                 console.log("Good job!");
             } else {
                 console.log("Bad job :(");

@@ -92,7 +92,7 @@ section{
     width: 100%;
 
     position: absolute;
-    overflow: hidden;
+    overflow: scroll;
     top: 10%;
     bottom: 4px;
 
@@ -101,26 +101,33 @@ section{
 }
 
 .cards{
-    height: 110px;
-    width: 110px;
+    height: 210px;
+    width: 210px;
     margin: 1% 1% 1% 1%;
 
     border: darkgray solid 1px;
     display: inline-block;
-
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .cardSelected{
-    border: grey;
-    border-style: dotted;
-    background-image: none;
+    border:lightslategray;
+    border-style: inset;
+}
+
+.cardGreen{
+    background-image: none !important;
+    background-color: greenyellow;
 }
 
 /*-----------------------------media queries*/
 /*ipad screens only - under 1000px width*/
-@media screen and (min-width: 768px){
+@media screen and (min-width: 1025px){
+.cards{
+    height: 110px;
+    width: 110px;
+}
 #cover-text{
     margin-top: 18%;
 }
@@ -131,6 +138,10 @@ section{
 
 /*mobile screens - under 480px width*/
 @media screen and (max-width: 480px){
+.cards{
+    height: 110px;
+    width: 110px;
+}
 #cover-text{
     height: 65%;
     width: 85%;
@@ -139,6 +150,10 @@ section{
 
 /*very small mobile screens - under 320px width*/
 @media screen and (max-width: 320px){
+.cards{
+    height: 90px;
+    width: 90px;
+}
 #cover-text{
     height: 85%;
     width: 85%;
