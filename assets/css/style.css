@@ -9,14 +9,11 @@ section{
     overflow: hidden;
 }
 
-#cover-image{
+.cover-image{
     height: 100%;
     width: 100%;
-
-    background: url("/assets/img/sverige-flag.jpg") no-repeat center center;
     background-size: cover;
     position: absolute;
-    z-index: 5;
 
     animation-name: image-zoom;
     animation-duration: 10s;
@@ -30,6 +27,11 @@ section{
     to{
         transform: scale(1.2);
     }
+}
+
+#cover-image-start{
+    background: url("/assets/img/sverige-flag.jpg") no-repeat center center;
+    z-index: 5;
 }
 
 .cover-text{
@@ -149,20 +151,27 @@ section{
 
 /*--------------------------------------------------screen3*/
 #screen-3{
+    display: block;
+    overflow: hidden;
     position: absolute;
-    z-index: 0 !important;
+    
+    z-index: 1 !important;
 }
 
 #container-end{
     height: 100%;
     width: 100%;
     background-color: grey;
-    z-index: 0 !important;
 }
 
 #button-try-again{
     font-size: 3rem;
     margin-top: 5%;
+}
+
+#cover-image-end{
+    background: url("/assets/img/you-win.jpg") no-repeat center center;
+    z-index: 0;
 }
 
 
