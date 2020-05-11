@@ -51,6 +51,7 @@ section{
 }
 
 .cover-text h2{
+    padding: 16px 16px 10px;
     font-size: 3em;
 }
 
@@ -79,27 +80,29 @@ section{
 }
 
 #container-btn-back{
-    height: 6px;
+    height: 10%;
     width: 100%;
-
     background-color: antiquewhite;
-    
     position: relative;
     display: block;
 }
 
 #button-back{
-    height: 6%;
-    width: 25%;
-
-    top: 4px;
-    bottom: 4px;
-    left: 6px;
+    height: 4%;
+    width: 20%;
+    top: 2%;
+    left: 4%;;
     padding: 2px 2px 2px;
     position: fixed;
 
-    font-size: 1.70em;
+    font-size: 1.60em;
     text-align: center;
+}
+
+#container-screen-2{
+    align-content: center;
+    display: block;
+    background-color: antiquewhite;
 }
 
 .container{
@@ -110,8 +113,7 @@ section{
     content: center;
     align-content: center;
     text-align: center;
-
-    display: block;
+    display: flex;
     position: inherit;
     cursor: pointer;
 
@@ -119,29 +121,49 @@ section{
 }
 
 #container-card{
-    height: 80%;
+    height: 900px;
     width: 100%;
-    margin-top: 20%;
+    
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    perspective: 1000px;
 
-    perspective: 40rem;
     z-index: 4;
 }
 
-#container-screen-2{
-    background-color: antiquewhite;
+.container-card-each{
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
 }
 
-.cards{
-    height: 210px;
-    width: 210px;
-    margin: 1% 1% 1% 1%;
+.container-card-each:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+}
 
-    border: darkgray solid 1px;
+/*.cards{
     display: inline-block;
+}*/
+
+.container-card-each, .card-front, .card-back {
+    height: 320px;
+    width: 320px;
+    margin: 1% 1% 1% 1%;
+}
+
+.card-front, .card-back {
+    border-radius: 5px;
+    background: #1C7CCC;
+    backface-visibility: hidden;
+    position: absolute;
+
     background-size: cover;
     background-repeat: no-repeat;
 
-    z-index: inherit;
+    z-index: 4;
 }
 
 .cardSelected{
@@ -185,10 +207,11 @@ section{
 
 /*-----------------------------media queries*/
 /*ipad screens only - under 1000px width*/
-@media screen and (max-width: 1025px){
-.cards{
-    height: 110px;
-    width: 110px;
+@media screen and (max-width: 1024px){
+.container-card-each, .card-front, .card-back {
+    height: 180px;
+    width: 180px;
+    margin: 1% 1% 1% 1%;
 }
 .cover-text{
     margin-top: 18%;
@@ -197,24 +220,33 @@ section{
 
 /*mobile screens - under 480px width*/
 @media screen and (max-width: 480px){
-.cards{
+#container-card{
+    height: 600px;
+}
+.container-card-each, .card-front, .card-back {
     height: 100px;
     width: 100px;
+    margin: 1% 1% 1% 1%;
 }
 .cover-text{
     height: 65%;
     width: 85%;
 }
+.cover-text h2 {
+    font-size: 2em;
+}
 }
 
 /*very small mobile screens - under 320px width*/
 @media screen and (max-width: 320px){
-.cards{
+.container-card-each, .card-front, .card-back {
     height: 86px;
     width: 86px;
+    margin: 1% 1% 1% 1%;
 }
 .cover-text{
     height: 85%;
     width: 85%;
+    margin-top: 2%;
 }
 }
