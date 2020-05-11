@@ -44,4 +44,4 @@ Happy coding!
 
 The timer countdown comes from: https://scotch.io/tutorials/create-a-cssjs-countdown-timer
 
-FLip effect from: https://www.w3schools.com/howto/howto_css_flip_card.asp
+FLip effect from freeCodeCamp.org: https://www.youtube.com/watch?v=ZniVgo8U7ek
