@@ -140,6 +140,6 @@ for (const card of allCards) {
 for (const cardFront of allCardsFront) {
     cardFront.addEventListener('mouseover', function() {
         $(this).addClass('flip');
-        console.log("this card has been flipped!")
-    }
+        console.log("this card has been flipped!");
+    })
 }
