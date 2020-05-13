@@ -60,13 +60,14 @@ function initializeCards(){
     cardPlaceholders = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
     cardPairs = ["blabar", "brod", "hallon", "kaffe", "kanelbulle", "appelpaj"];
     cardUrls = [];
+    x = 1;
 
     //this turns the cardPairs list into 8 elements
     cardPairs.forEach(cardPair => {
         //later on could add level that upgrades ex. "url('/assets/img/level- + (level + 1) + cardPair + ".jpg')"
         //after cardPlaceholders.lenght has runned once
-        var cardImageUrl = "url('/assets/img/level-1/" + cardPair + ".jpg')";
-        var cardTextUrl = "url('/assets/img/level-1/" + cardPair + "-text.jpg')";
+        var cardImageUrl = "url('/assets/img/level-" + x + "/" + cardPair + ".jpg')";
+        var cardTextUrl = "url('/assets/img/level-" + x + "/"  + cardPair + "-text.jpg')";
 
         cardUrls.push(cardImageUrl, cardTextUrl);
     });
@@ -100,8 +101,8 @@ function initializeCards(){
 
 //displays styling over clicked elements of type card
 for (const card of allCards) {
-    card.addEventListener('click', function() {
-        $(this).toggleClass("cardSelected");
+    card.addEventListener('hover', function() {
+        $(this).toggleClass('cardSelected');
 
         //selects all clicked cards
         const cardsClicked = document.querySelectorAll(".cardSelected")
@@ -132,3 +133,5 @@ for (const card of allCards) {
         }
     })
 }
+
+$('card').toggleClass('flip');

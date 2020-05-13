@@ -90,10 +90,8 @@ section{
 #button-back{
     height: 40%;
     width: 20%;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    margin-left: 4%;
-    padding: 2px 2px 2px 2px;
+    margin: 2px;
+    padding: 1px 1px 1px 1px;
     float: left;
 
     font-size: 1.60em;
@@ -101,23 +99,20 @@ section{
 }
 
 #container-screen-2{
-    width: 100%;
     height: 100%;
-    align-content: center;
+    width: 100%;
+    text-align: center;
     display: block;
     background-color: antiquewhite;
 }
 
 #container-card{
-    height: 900px;
-    width: 60%;
+    height: 720px;
+    width: 80%;
 
-    margin: auto;
-    margin-top: 10%;
-    
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    align-content: center;
     perspective: 1000px;
 
     z-index: 4;
@@ -136,15 +131,16 @@ section{
 }
 
 .container-card-each, .card-front, .card-back {
-    height: 280px;
-    width: 280px;
+    height: 210px;
+    width: 210px;
     margin: 1% 1% 1% 1%;
 }
 
 .card-front, .card-back {
     border-radius: 5px;
-    background: #1C7CCC;
+    background: skyblue;
     backface-visibility: hidden;
+    box-shadow: 5px 10px 18px #888888;
     position: absolute;
 
     background-size: cover;
@@ -156,6 +152,7 @@ section{
 .cardSelected{
     border:lightslategray;
     border-style: inset;
+    transform: rotateY(180deg);
 }
 
 .cardGreen{
@@ -193,27 +190,17 @@ section{
 
 
 /*-----------------------------media queries*/
-/*ipad screens only - under 1600px width*/
-@media screen and (max-width: 1600px){
-.container-card-each, .card-front, .card-back {
-    height: 220px;
-    width: 220px;
-}
-/*ipad screens only - under 1200px width*/
-@media screen and (max-width: 1200px){
+/*ipad screens only - under 1000px width*/
+@media screen and (max-width: 1024px){
 #container-card{
-    height: 800px;
-    width: 80%;
+    height: 600px;
 }
 .container-card-each, .card-front, .card-back {
-    height: 186px;
-    width: 186px;
+    height: 146px;
+    width: 146px;
 }
 .cover-text{
     margin-top: 18%;
-}
-#button-back{
-    font-size: 1.3em;
 }
 }
 
@@ -234,6 +221,9 @@ section{
 }
 .cover-text h2 {
     font-size: 2em;
+}
+#button-back{
+    font-size: 1.3em;
 }
 }
 
