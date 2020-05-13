@@ -52,7 +52,7 @@ section{
 
 .cover-text h2{
     padding: 16px 16px 10px;
-    font-size: 3em;
+    font-size: 2em;
 }
 
 #cover-text-start{
@@ -100,29 +100,19 @@ section{
 }
 
 #container-screen-2{
+    width: 100%;
+    height: 100%;
     align-content: center;
     display: block;
     background-color: antiquewhite;
 }
 
-.container{
-    width: 100%;
-    height: 100%;
-
-    margin: auto;
-    content: center;
-    align-content: center;
-    text-align: center;
-    display: flex;
-    position: inherit;
-    cursor: pointer;
-
-    z-index: inherit;
-}
-
 #container-card{
     height: 900px;
-    width: 100%;
+    width: 60%;
+
+    margin: auto;
+    margin-top: 10%;
     
     display: flex;
     flex-wrap: wrap;
@@ -144,13 +134,9 @@ section{
     transition: transform .2s;
 }
 
-/*.cards{
-    display: inline-block;
-}*/
-
 .container-card-each, .card-front, .card-back {
-    height: 320px;
-    width: 320px;
+    height: 280px;
+    width: 280px;
     margin: 1% 1% 1% 1%;
 }
 
@@ -206,12 +192,24 @@ section{
 
 
 /*-----------------------------media queries*/
-/*ipad screens only - under 1000px width*/
-@media screen and (max-width: 1024px){
+/*ipad screens only - under 1600px width*/
+@media screen and (max-width: 1600px){
+#container-card{
+    
+}
 .container-card-each, .card-front, .card-back {
-    height: 180px;
-    width: 180px;
-    margin: 1% 1% 1% 1%;
+    height: 220px;
+    width: 220px;
+}
+/*ipad screens only - under 1200px width*/
+@media screen and (max-width: 1200px){
+#container-card{
+    height: 800px;
+    width: 80%;
+}
+.container-card-each, .card-front, .card-back {
+    height: 186px;
+    width: 186px;
 }
 .cover-text{
     margin-top: 18%;
@@ -221,7 +219,8 @@ section{
 /*mobile screens - under 480px width*/
 @media screen and (max-width: 480px){
 #container-card{
-    height: 600px;
+    height: 420px;
+    width: 96%;
 }
 .container-card-each, .card-front, .card-back {
     height: 100px;
