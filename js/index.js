@@ -5,8 +5,9 @@ var cardUrls;
 //selects all cards
 const allCards = document.querySelectorAll(".cards")
 
-//selects all cards cards-front
+//selects all cards card-front & card-back
 const allCardsFront = document.querySelectorAll(".card-front")
+const allCardsBack = document.querySelectorAll(".card-back")
 
 //Screen 1 - start menu
 $("#button-start").click(function() {
@@ -140,6 +141,15 @@ for (const card of allCards) {
 for (const cardFront of allCardsFront) {
     cardFront.addEventListener('mouseover', function() {
         $(this).addClass('flip');
-        console.log("this card has been flipped!");
+        console.log(this + " this card has been flipped!");
+
+        setTimeout(function() {
+            $(this).removeClass('flip');
+        }, 4000);
+        console.log(this + " the class has been removed from this card");
     })
+    for (const cardBack of allCardsBack) {
+        $(this).addClass('flip');
+        console.log(this + " this card has been flipped again!");
+    }
 }

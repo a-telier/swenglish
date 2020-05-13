@@ -163,6 +163,10 @@ section{
     transform: rotateY(180deg);
 }
 
+.flip-again{
+    transform: rotateY(-180deg);
+}
+
 .cardGreen{
     background-image: none !important;
     background-color: greenyellow;
