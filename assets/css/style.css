@@ -138,7 +138,7 @@ section{
 
 .card-front, .card-back {
     border-radius: 5px;
-    background: skyblue;
+    /*background: skyblue;*/
     backface-visibility: hidden;
     box-shadow: 5px 10px 18px #888888;
     position: absolute;
@@ -149,9 +149,17 @@ section{
     z-index: 4;
 }
 
+.card-front{
+    background-image: url("/assets/img/card-reindeer.jpg") !important;
+}
+
 .cardSelected{
     border:lightslategray;
     border-style: inset;
+    /*transform: rotateY(180deg);*/
+}
+
+.flip{
     transform: rotateY(180deg);
 }
 

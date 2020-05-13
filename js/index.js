@@ -5,6 +5,9 @@ var cardUrls;
 //selects all cards
 const allCards = document.querySelectorAll(".cards")
 
+//selects all cards cards-front
+const allCardsFront = document.querySelectorAll(".card-front")
+
 //Screen 1 - start menu
 $("#button-start").click(function() {
     $("#screen-1").fadeOut('slow');
@@ -101,7 +104,7 @@ function initializeCards(){
 
 //displays styling over clicked elements of type card
 for (const card of allCards) {
-    card.addEventListener('hover', function() {
+    card.addEventListener('click', function() {
         $(this).toggleClass('cardSelected');
 
         //selects all clicked cards
@@ -134,4 +137,9 @@ for (const card of allCards) {
     })
 }
 
-$('card').toggleClass('flip');
+for (const cardFront of allCardsFront) {
+    cardFront.addEventListener('mouseover', function() {
+        $(this).addClass('flip');
+        console.log("this card has been flipped!")
+    }
+}
