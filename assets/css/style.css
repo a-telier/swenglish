@@ -88,12 +88,13 @@ section{
 }
 
 #button-back{
-    height: 4%;
+    height: 40%;
     width: 20%;
-    top: 2%;
-    left: 4%;;
-    padding: 2px 2px 2px;
-    position: fixed;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 4%;
+    padding: 2px 2px 2px 2px;
+    float: left;
 
     font-size: 1.60em;
     text-align: center;
@@ -194,9 +195,6 @@ section{
 /*-----------------------------media queries*/
 /*ipad screens only - under 1600px width*/
 @media screen and (max-width: 1600px){
-#container-card{
-    
-}
 .container-card-each, .card-front, .card-back {
     height: 220px;
     width: 220px;
@@ -213,6 +211,9 @@ section{
 }
 .cover-text{
     margin-top: 18%;
+}
+#button-back{
+    font-size: 1.3em;
 }
 }
 
