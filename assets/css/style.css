@@ -161,6 +161,7 @@ section{
 
 .flip{
     transform: rotateY(180deg);
+    transition: transform 1s;
 }
 
 .flip-again{
