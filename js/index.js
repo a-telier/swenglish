@@ -105,7 +105,7 @@ function initializeCards(){
 
 //displays styling over clicked elements of type card
 for (const card of allCards) {
-    card.addEventListener('click', function() {
+    card.addEventListener('dblclick', function() {
         $(this).toggleClass('cardSelected');
 
         //selects all clicked cards
@@ -138,18 +138,10 @@ for (const card of allCards) {
     })
 }
 
-for (const cardFront of allCardsFront) {
-    cardFront.addEventListener('mouseover', function() {
-        $(this).addClass('flip');
-        console.log(this + " this card has been flipped!");
-
-        setTimeout(function() {
-            $(this).removeClass('flip');
-        }, 4000);
-        console.log(this + " the class has been removed from this card");
+for (const cardBack of allCardsBack) {
+    cardBack.addEventListener('mouseenter', function() {
+        $(this).toggleClass('flip');
+        console.log(this + "A mouseover event has been triggered - class .flip has been added!");
+    
     })
-    for (const cardBack of allCardsBack) {
-        $(this).addClass('flip');
-        console.log(this + " this card has been flipped again!");
-    }
 }
