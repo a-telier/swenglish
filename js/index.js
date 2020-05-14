@@ -18,8 +18,8 @@ $("#button-start").click(function() {
 //Screen 2 - cards game
 $("#button-back").click(function() {
     $("#screen-1").fadeIn('fast');
-    $(allCards).removeClass('cardSelected');
-    $(allCards).removeClass('cardGreen');
+    $(allCards).removeClass('cardSelected cardGreen');
+    initializeCards();
 });
 
 //Screen 3 - try again
@@ -105,7 +105,7 @@ function initializeCards(){
 
 //displays styling over clicked elements of type card
 for (const card of allCards) {
-    card.addEventListener('dblclick', function() {
+    card.addEventListener('click', function() {
         $(this).toggleClass('cardSelected');
 
         //selects all clicked cards
@@ -138,10 +138,11 @@ for (const card of allCards) {
     })
 }
 
-for (const cardBack of allCardsBack) {
-    cardBack.addEventListener('mouseenter', function() {
+for (const cardFront of allCardsFront) {
+    cardFront.addEventListener('mouseover', function() {
         $(this).toggleClass('flip');
-        console.log(this + "A mouseover event has been triggered - class .flip has been added!");
-    
-    })
+    });
+    setTimeout(function() {
+        $(this).toggleClass('flip-again');
+    },3000);
 }
