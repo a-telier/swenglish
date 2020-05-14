@@ -19,6 +19,7 @@ $("#button-start").click(function() {
 $("#button-back").click(function() {
     $("#screen-1").fadeIn('fast');
     $(allCards).removeClass('cardSelected cardGreen');
+    backStyling();
     initializeCards();
 });
 
@@ -103,6 +104,10 @@ function initializeCards(){
     }
 };
 
+function backStyling() {
+    $(allCardsFront).show();
+}
+
 //displays styling over clicked elements of type card
 for (const card of allCards) {
     card.addEventListener('click', function() {
@@ -138,11 +143,29 @@ for (const card of allCards) {
     })
 }
 
+//flip effect
 for (const cardFront of allCardsFront) {
     cardFront.addEventListener('mouseover', function() {
-        $(this).toggleClass('flip');
+        $(this).addClass('flip');
     });
     setTimeout(function() {
-        $(this).toggleClass('flip-again');
+        $(this).addClass('flip-again');
     },3000);
+}
+
+//countdown timer
+const startingMinutes = 1;
+let time = 30;
+
+const countDown = document.getElementById('countdown');
+
+//update counter every 1s
+setInterval(updateCountDown, 1000);
+
+function updateCountDown() {
+    // const minutes = Math.floor(time/60);
+    // let seconds = time % 60;
+
+    countDown.innerHTML = `${time}`;
+    time--;
 }

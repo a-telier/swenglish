@@ -88,12 +88,30 @@ section{
 #button-back{
     height: 40%;
     width: 20%;
+    float: left;
+    text-align: center;
+}
+
+#countdown{
+    height: 100%;
+    width: 12%;
+    display: inline-flex;
+    float: right;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    border-style: dotted;
+    border-color: gray;
+
+    background-color: white;
+    color: black;
+}
+
+#button-back, #countdown{
     margin: 2px;
     padding: 1px 1px 1px 1px;
-    float: left;
-
     font-size: 1.60em;
-    text-align: center;
 }
 
 #container-screen-2{
@@ -154,8 +172,8 @@ section{
 }
 
 .cardSelected{
-    border:lightslategray;
-    box-shadow: 0 4px 8px 0 rgba(95, 164, 255, 0.404);
+    border: black;
+    border-width: 2px;
     border-style: inset;
     /*transform: rotateY(180deg);*/
 }
@@ -221,6 +239,10 @@ section{
 
 /*mobile screens - under 480px width*/
 @media screen and (max-width: 480px){
+#countDown{
+    width: 16%;
+    height: 80%;
+}
 #container-card{
     height: 420px;
     width: 96%;
