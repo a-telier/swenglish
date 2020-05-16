@@ -3,49 +3,56 @@
 var cardPlaceholders;
 var cardPairs;
 var cardUrls;
+
 //countdown timer
 var time = 10;
 var timer;
-//points
+
+//counter of matched words
 var wordsPaired;
 
 
 //  SELECTORS
 //selects all cards
 const allCards = document.querySelectorAll(".cards")
-//selects all cards card-front & card-back
+
+//selects all cards-front
 const allCardsFront = document.querySelectorAll(".card-front")
+//selects all cards-back
 const allCardsBack = document.querySelectorAll(".card-back")
+//selects all cards selected
+const cardsSelected = document.querySelectorAll(".cardSelected")
+//selects all cards that have a correct match
+const allCardsGreen = document.querySelectorAll('.cardGreen')
+
 //selects the countdown element
 const countdown = document.getElementById('countdown')
-//selects all green/good cards
-const allCardsGreen = document.querySelectorAll('.cardGreen')
-//selects the text in screen 3
+//selects the text element in screen 3
 const wordsPairedText = document.getElementById('wordsPaired-text')
 
 
 //  BUTTONS
-//Screen 1 - start menu
+//Screen 1 - start menu to game
 $("#button-start").click(function() {
     $("#screen-1").fadeOut('slow');
     initializeCards();
 });
 
-//Screen 2 - cards game
+//Screen 2 - from game back to start menu
 $("#button-back").click(function() {
     $("#screen-1").fadeIn('fast');
     $(allCards).removeClass('cardSelected cardGreen');
     initializeCards();
 });
 
-//Screen 3 - try again
+//Screen 3 - from last screen back to game
 $("#button-try-again").click(function(){
     $("#screen-2").fadeIn('fast');
     $(allCards).removeClass('cardSelected cardGreen');
     initializeCards();
 })
 
-//  COUNTDOWN
+//  COUNTDOWN TIMER
 function updateCountDown() {
     time--;
     countdown.innerHTML = `${time}`;
@@ -53,12 +60,12 @@ function updateCountDown() {
         clearInterval(timer);
         $('#screen-2').fadeOut('fast');
         $('#screen-3').fadeIn('fast');
-        $('#wordsPaired-text').text("You have matched " + `${wordsPaired}` + " words, do you want to try again?");
+        $('#wordsPaired-text').text("Congratulations! You have matched " + `${wordsPaired}` + " words, do you want to try again?");
         // console.log("I have cleared the interval");
     }
 }
 
-//  FUNCTIONS
+//  FUNCTIONS TO INITALIZE GAME
 function uniqueRandomList(listLenght){
     var uniqueList = [];
     var listAvailablePlaceholders = [];
@@ -137,26 +144,25 @@ function initializeCards(){
     timer = setInterval(updateCountDown, 1000);
 };
 
-//  CARDS STYLING & LOGIC
+
+//  CARDS GAMEPLAY INTERACTIONS
 //displays styling over clicked elements of type card
 for (const card of allCards) {
     card.addEventListener('click', function() {
         $(this).toggleClass('cardSelected');
 
-        //selects all clicked cards
-        const cardsClicked = document.querySelectorAll(".cardSelected")
-        // console.log("Cards currently selected: " + cardsClicked.length);
+        const cardsSelected = document.querySelectorAll(".cardSelected")
         
-        if(cardsClicked.length == 2) {
+        if(cardsSelected.length == 2) {
             //You have selected 2 card - are they matching?
-            let card1 = cardsClicked[0];
-            let card2 = cardsClicked[1];
+            let card1 = cardsSelected[0];
+            let card2 = cardsSelected[1];
 
             if ($(card1).data("cardPair") == $(card2).data("cardPair")) {
                 $(card1).removeClass("cardSelected").addClass("cardGreen");
                 $(card2).removeClass("cardSelected").addClass("cardGreen");
                 wordsPaired++;
-                console.log("Good job - you have paired " + wordsPaired + " words!");
+                // console.log("Good job - you have paired " + wordsPaired + " words!");
             } else {
                 console.log("Try again - this is not the right match for this card!");
             }
@@ -164,15 +170,18 @@ for (const card of allCards) {
             $(card2).removeClass("cardSelected");
         }
         //this is how you win
-        if(allCardsGreen.length == 12) {
+        if(wordsPaired == 6) {
             $("#screen-2").fadeOut('slow');
             $("#screen-3").fadeIn('fast');
             console.log("You won!");
+            $('#wordsPaired-text').text("Congratulations! You have matched " + `${wordsPaired}` + " words, do you want to try again?");
         } 
     })
 }
 
-// sleep time expects milliseconds
+// delays the removeClass flip effect
+var Promise;
+
 function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
@@ -182,27 +191,20 @@ for (const cardFront of allCardsFront) {
     cardFront.addEventListener('mouseover', function() {
         $(this).addClass('flip', 1000);
     });
+
     cardFront.addEventListener('mouseout', function() {
         sleep(2000).then(() => {
-            if (cardFront !== cardSelected || cardGreen) {
-                $(this).removeClass('flip', 1000);
-                console.log('removeclass flip'); 
+            if (!(
+                $(cardFront).prev().hasClass('cardSelected')
+                ||
+                $(cardFront).prev().hasClass('cardGreen')
+            )) {
+                $(this).removeClass('flip', 2000);
+                console.log('removeclass flip');
             }
         });
-        // setTimeout(function() {
-        //     $(this).removeClass('flip',1000);
-        //     console.log('removeclqss flip');
-        // }, 2000);
     });
-    // //on mobile devices with touch screen
-    // cardFront.addEventListener('touchmove', function() {
-    //     $(this).addClass('flip');
-    // });
-    // cardFront.addEventListener('touchend', function(){
-    //     $(this).removeClass('flip');
-    // });
 }
-
 
 
 
