@@ -9,6 +9,10 @@ const allCards = document.querySelectorAll(".cards")
 const allCardsFront = document.querySelectorAll(".card-front")
 const allCardsBack = document.querySelectorAll(".card-back")
 
+//selects the countdown element
+const countdown = document.getElementById('#countdown')
+
+
 //Screen 1 - start menu
 $("#button-start").click(function() {
     $("#screen-1").fadeOut('slow');
@@ -26,8 +30,7 @@ $("#button-back").click(function() {
 //Screen 3 - try again
 $("#button-try-again").click(function(){
     $("#screen-2").fadeIn('fast');
-    $(allCards).removeClass('cardSelected');
-    $(allCards).removeClass('cardGreen');
+    $(allCards).removeClass('cardSelected cardGreen');
     initializeCards();
 })
 
@@ -132,16 +135,27 @@ for (const card of allCards) {
             $(card1).removeClass("cardSelected");
             $(card2).removeClass("cardSelected");
         }
-        //selects all green/good cards
-        const cardsGreen = document.querySelectorAll(".cardGreen")
 
-        if(cardsGreen.length == 12) {
+//selects all green/good cards
+const allCardsGreen = document.querySelectorAll('.cardGreen')
+
+//game logic
+//this is how you earn points
+
+
+        //this is how you win
+        if(allCardsGreen.length == 12) {
             $("#screen-2").fadeOut('slow');
             $("#screen-3").fadeIn('fast');
             console.log("You won!");
+        
+        //this is what happens when the 30s are out
+        } else if (countdown = 0) {
+            $("#screen-3").fadeIn('fast');
         }
     })
 }
+
 
 //flip effect
 for (const cardFront of allCardsFront) {
@@ -153,19 +167,18 @@ for (const cardFront of allCardsFront) {
     },3000);
 }
 
-//countdown timer
-const startingMinutes = 1;
-let time = 30;
 
-const countDown = document.getElementById('countdown');
+//countdown timer
+let time = 30;
 
 //update counter every 1s
 setInterval(updateCountDown, 1000);
 
 function updateCountDown() {
-    // const minutes = Math.floor(time/60);
-    // let seconds = time % 60;
-
-    countDown.innerHTML = `${time}`;
+    countdown.innerHTML = `${time}`;
     time--;
+    if (countdown == 0) {
+        $('#countdown').countdown('stop');
+    }
 }
+

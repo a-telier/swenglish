@@ -92,28 +92,6 @@ section{
     text-align: center;
 }
 
-#countdown{
-    height: 100%;
-    width: 12%;
-    display: inline-flex;
-    float: right;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-    border-style: dotted;
-    border-color: gray;
-
-    background-color: white;
-    color: black;
-}
-
-#button-back, #countdown{
-    margin: 2px;
-    padding: 1px 1px 1px 1px;
-    font-size: 1.60em;
-}
-
 #container-screen-2{
     height: 100%;
     width: 100%;
@@ -149,8 +127,8 @@ section{
 }
 
 .container-card-each, .card-front, .card-back {
-    height: 210px;
-    width: 210px;
+    height: 180px;
+    width: 180px;
     margin: 1% 1% 1% 1%;
 }
 
@@ -178,6 +156,35 @@ section{
     /*transform: rotateY(180deg);*/
 }
 
+.cardGreen{
+    background-image: url("/assets/img/card-bird-with-frame.jpg") !important;
+    transition: 1s;
+}
+
+/*-------------------------flipping card-styling*/
+#countdown{
+    height: 100%;
+    width: 12%;
+    display: inline-flex;
+    float: right;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    border-style: dotted;
+    border-color: gray;
+
+    background-color: white;
+    color: black;
+}
+
+#button-back, #countdown{
+    margin: 2px;
+    padding: 1px 1px 1px 1px;
+    font-size: 1.60em;
+}
+
+/*-------------------------flipping card-styling*/
 .flip{
     transform: rotateY(180deg);
     transition: transform 1s;
@@ -187,13 +194,6 @@ section{
     transform: rotateY(-180deg);
     transition: transform 1s;
 }
-
-.cardGreen{
-    background-image: url("/assets/img/card-bird-with-frame.jpg") !important;
-    transition: 1s;
-}
-
-/*-------------------------flipping card-styling*/
 
 /*--------------------------------------------------screen3*/
 #screen-3{
