@@ -175,18 +175,19 @@ for (const card of allCards) {
             $("#screen-3").fadeIn('fast');
             console.log("You won!");
             $('#wordsPaired-text').text("Congratulations! You have matched " + `${wordsPaired}` + " words, do you want to try again?");
-        } 
+        }
     })
 }
 
-// delays the removeClass flip effect
+// STYLING EFFECTS
+// delays flip-back effect
 var Promise;
 
 function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 
-//flip effect
+// flip effect
 for (const cardFront of allCardsFront) {
     cardFront.addEventListener('mouseover', function() {
         $(this).addClass('flip', 1000);
