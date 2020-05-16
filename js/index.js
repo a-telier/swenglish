@@ -20,7 +20,8 @@ const allCardsBack = document.querySelectorAll(".card-back")
 const countdown = document.getElementById('countdown')
 //selects all green/good cards
 const allCardsGreen = document.querySelectorAll('.cardGreen')
-
+//selects the text in screen 3
+const wordsPairedText = document.getElementById('wordsPaired-text')
 
 
 //  BUTTONS
@@ -50,9 +51,10 @@ function updateCountDown() {
     countdown.innerHTML = `${time}`;
     if (time == 0) {
         clearInterval(timer);
-        $("#screen-2").fadeOut('fast');
-        $("#screen-3").fadeIn('fast');
-        console.log("I have cleared the interval");
+        $('#screen-2').fadeOut('fast');
+        $('#screen-3').fadeIn('fast');
+        $('#wordsPaired-text').text("You have matched " + `${wordsPaired}` + " words, do you want to try again?");
+        // console.log("I have cleared the interval");
     }
 }
 
