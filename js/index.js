@@ -1,18 +1,23 @@
+//VARIABLES
 var cardPlaceholders;
 var cardPairs;
 var cardUrls;
 
+
+//CONSTANTS
 //selects all cards
 const allCards = document.querySelectorAll(".cards")
-
 //selects all cards card-front & card-back
 const allCardsFront = document.querySelectorAll(".card-front")
 const allCardsBack = document.querySelectorAll(".card-back")
-
 //selects the countdown element
-const countdown = document.getElementById('#countdown')
+const countdown = document.getElementById('countdown')
+//countdown timer
+var time = 10;
+var timer;
 
 
+//BUTTONS
 //Screen 1 - start menu
 $("#button-start").click(function() {
     $("#screen-1").fadeOut('slow');
@@ -23,7 +28,6 @@ $("#button-start").click(function() {
 $("#button-back").click(function() {
     $("#screen-1").fadeIn('fast');
     $(allCards).removeClass('cardSelected cardGreen');
-    backStyling();
     initializeCards();
 });
 
@@ -34,6 +38,19 @@ $("#button-try-again").click(function(){
     initializeCards();
 })
 
+//COUNTDOWN
+function updateCountDown() {
+    time--;
+    countdown.innerHTML = `${time}`;
+    if (time == 0) {
+        clearInterval(timer);
+        $("#screen-2").fadeOut('fast');
+        $("#screen-3").fadeIn('fast');
+        console.log("I have cleared the interval");
+    }
+}
+
+//FUNCTIONS
 function uniqueRandomList(listLenght){
     var uniqueList = [];
     var listAvailablePlaceholders = [];
@@ -46,7 +63,6 @@ function uniqueRandomList(listLenght){
     for (let index = 0; index <= listLenght; index++) {
         listAvailablePlaceholders.push(index);
     }
-
     //the loop runs the times of listLenght ex. 14
     for (let index = 0; index <= listLenght; index++) {
         //Creates a random number ex. between 0 and 13 as 14 positions startin with 0
@@ -105,6 +121,13 @@ function initializeCards(){
             }
         });
     }
+    //update countdown
+    time = 11;
+    updateCountDown();
+
+    //removing current countdown to not make a second one
+    clearInterval(timer);
+    timer = setInterval(updateCountDown, 1000);
 };
 
 function backStyling() {
@@ -150,9 +173,10 @@ const allCardsGreen = document.querySelectorAll('.cardGreen')
             console.log("You won!");
         
         //this is what happens when the 30s are out
-        } else if (countdown = 0) {
-            $("#screen-3").fadeIn('fast');
-        }
+        } 
+        // else if (countdown = 0) {
+        //     $("#screen-3").fadeIn('fast');
+        // }
     })
 }
 
@@ -168,17 +192,5 @@ for (const cardFront of allCardsFront) {
 }
 
 
-//countdown timer
-let time = 30;
 
-//update counter every 1s
-setInterval(updateCountDown, 1000);
-
-function updateCountDown() {
-    countdown.innerHTML = `${time}`;
-    time--;
-    if (countdown == 0) {
-        $('#countdown').countdown('stop');
-    }
-}
 
