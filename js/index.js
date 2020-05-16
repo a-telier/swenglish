@@ -1,10 +1,16 @@
-//VARIABLES
+//  VARIABLES
+// cards randomizing
 var cardPlaceholders;
 var cardPairs;
 var cardUrls;
+//countdown timer
+var time = 10;
+var timer;
+//points
+var wordsPaired;
 
 
-//CONSTANTS
+//  SELECTORS
 //selects all cards
 const allCards = document.querySelectorAll(".cards")
 //selects all cards card-front & card-back
@@ -12,12 +18,12 @@ const allCardsFront = document.querySelectorAll(".card-front")
 const allCardsBack = document.querySelectorAll(".card-back")
 //selects the countdown element
 const countdown = document.getElementById('countdown')
-//countdown timer
-var time = 10;
-var timer;
+//selects all green/good cards
+const allCardsGreen = document.querySelectorAll('.cardGreen')
 
 
-//BUTTONS
+
+//  BUTTONS
 //Screen 1 - start menu
 $("#button-start").click(function() {
     $("#screen-1").fadeOut('slow');
@@ -38,7 +44,7 @@ $("#button-try-again").click(function(){
     initializeCards();
 })
 
-//COUNTDOWN
+//  COUNTDOWN
 function updateCountDown() {
     time--;
     countdown.innerHTML = `${time}`;
@@ -50,11 +56,10 @@ function updateCountDown() {
     }
 }
 
-//FUNCTIONS
+//  FUNCTIONS
 function uniqueRandomList(listLenght){
     var uniqueList = [];
     var listAvailablePlaceholders = [];
-    
 
     //this fills in the listAvailablePlaceholders with a unique value
     //we could have written a list, however if lenght of list changed = then code would not work anymore
@@ -76,7 +81,6 @@ function uniqueRandomList(listLenght){
         //Adds that random number within the available placeholders to the unique results list
         uniqueList.push(availablePlaceholder);
     }
-
     return uniqueList;
 }
 
@@ -84,14 +88,15 @@ function initializeCards(){
     cardPlaceholders = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
     cardPairs = ["blabar", "brod", "hallon", "kaffe", "kanelbulle", "appelpaj"];
     cardUrls = [];
-    x = 1;
+    levelNumber = 1;
+    wordsPaired = 0;
 
     //this turns the cardPairs list into 8 elements
     cardPairs.forEach(cardPair => {
         //later on could add level that upgrades ex. "url('/assets/img/level- + (level + 1) + cardPair + ".jpg')"
         //after cardPlaceholders.lenght has runned once
-        var cardImageUrl = "url('/assets/img/level-" + x + "/" + cardPair + ".jpg')";
-        var cardTextUrl = "url('/assets/img/level-" + x + "/"  + cardPair + "-text.jpg')";
+        var cardImageUrl = "url('/assets/img/level-" + levelNumber + "/" + cardPair + ".jpg')";
+        var cardTextUrl = "url('/assets/img/level-" + levelNumber + "/"  + cardPair + "-text.jpg')";
 
         cardUrls.push(cardImageUrl, cardTextUrl);
     });
@@ -111,7 +116,7 @@ function initializeCards(){
         var cardToUse = cardUrls[uniqueCardToUse];
 
         $(cardID).css('background-image', cardToUse);
-        console.log("This is the cardID: " + cardID + "; and this is the background-image to use:" + cardToUse);
+        // console.log("This is the cardID: " + cardID + "; and this is the background-image to use:" + cardToUse);
 
         //Find associated cardPair
         cardPairs.forEach(cardPair => {
@@ -130,10 +135,7 @@ function initializeCards(){
     timer = setInterval(updateCountDown, 1000);
 };
 
-function backStyling() {
-    $(allCardsFront).show();
-}
-
+//  CARDS STYLING & LOGIC
 //displays styling over clicked elements of type card
 for (const card of allCards) {
     card.addEventListener('click', function() {
@@ -141,7 +143,7 @@ for (const card of allCards) {
 
         //selects all clicked cards
         const cardsClicked = document.querySelectorAll(".cardSelected")
-        console.log("Cards currently selected: " + cardsClicked.length);
+        // console.log("Cards currently selected: " + cardsClicked.length);
         
         if(cardsClicked.length == 2) {
             //You have selected 2 card - are they matching?
@@ -151,44 +153,52 @@ for (const card of allCards) {
             if ($(card1).data("cardPair") == $(card2).data("cardPair")) {
                 $(card1).removeClass("cardSelected").addClass("cardGreen");
                 $(card2).removeClass("cardSelected").addClass("cardGreen");
-                console.log("Good job!");
+                wordsPaired++;
+                console.log("Good job - you have paired " + wordsPaired + " words!");
             } else {
-                console.log("Bad job :(");
+                console.log("Try again - this is not the right match for this card!");
             }
             $(card1).removeClass("cardSelected");
             $(card2).removeClass("cardSelected");
         }
-
-//selects all green/good cards
-const allCardsGreen = document.querySelectorAll('.cardGreen')
-
-//game logic
-//this is how you earn points
-
-
         //this is how you win
         if(allCardsGreen.length == 12) {
             $("#screen-2").fadeOut('slow');
             $("#screen-3").fadeIn('fast');
             console.log("You won!");
-        
-        //this is what happens when the 30s are out
         } 
-        // else if (countdown = 0) {
-        //     $("#screen-3").fadeIn('fast');
-        // }
     })
 }
 
+// sleep time expects milliseconds
+function sleep (time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
 
 //flip effect
 for (const cardFront of allCardsFront) {
     cardFront.addEventListener('mouseover', function() {
-        $(this).addClass('flip');
+        $(this).addClass('flip', 1000);
     });
-    setTimeout(function() {
-        $(this).addClass('flip-again');
-    },3000);
+    cardFront.addEventListener('mouseout', function() {
+        sleep(2000).then(() => {
+            if (cardFront !== cardSelected || cardGreen) {
+                $(this).removeClass('flip', 1000);
+                console.log('removeclass flip'); 
+            }
+        });
+        // setTimeout(function() {
+        //     $(this).removeClass('flip',1000);
+        //     console.log('removeclqss flip');
+        // }, 2000);
+    });
+    // //on mobile devices with touch screen
+    // cardFront.addEventListener('touchmove', function() {
+    //     $(this).addClass('flip');
+    // });
+    // cardFront.addEventListener('touchend', function(){
+    //     $(this).removeClass('flip');
+    // });
 }
 
 

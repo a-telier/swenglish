@@ -45,3 +45,5 @@ Happy coding!
 The timer countdown comes from: https://scotch.io/tutorials/create-a-cssjs-countdown-timer
 
 FLip effect from freeCodeCamp.org: https://www.youtube.com/watch?v=ZniVgo8U7ek
+
+Sleep function : https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep/39914235#39914235
