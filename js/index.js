@@ -118,13 +118,13 @@ function initializeCards(levelNumber){
     $(allCards).removeClass('cardSelected cardGreen');
     //logic depending on which level we are at
     if (levelNumber == 1){
-        cardPairs = ["blabar", "brod", "hallon", "kaffe", "kanelbulle", "appelpaj"];
+        cardPairs = ["vaffla", "brod", "kladkakka", "kaffe", "kanelbulle", "appelpaj"];
         $(".card-front").css("background-image", "url('/assets/img/card-reindeer.jpg')");
     } else if (levelNumber == 2){
         cardPairs = ["alg", "anka", "bjorn", "hare", "radjur", "rav"];
         $(".card-front").css("background-image", "url('/assets/img/card-fox.jpg')");
     } else if(levelNumber == 3){
-        cardPairs = ["alg", "anka", "bjorn", "hare", "radjur", "rav"];
+        cardPairs = ["hallon", "blabar", "bjorn", "hare", "radjur", "rav"];
         $(".card-front").css("background-image", "url('/assets/img/card-hare.jpg')");
     }
 
