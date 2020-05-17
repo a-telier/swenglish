@@ -61,7 +61,7 @@ function updateCountDown() {
         clearInterval(timer);
         $('#screen-2').fadeOut('fast');
         $('#screen-3').fadeIn('fast');
-        $('#wordsPaired-text').text("Congratulations! You have matched " + `${wordsPaired}` + " words, do you want to try again?");
+        // $('#wordsPaired-text').text("Congratulations! You have matched " + `${wordsPaired}` + " words, do you want to try again?");
         // console.log("I have cleared the interval");
     }
 }
@@ -124,7 +124,7 @@ function initializeCards(levelNumber){
         cardPairs = ["alg", "anka", "bjorn", "hare", "radjur", "rav"];
         $(".card-front").css("background-image", "url('/assets/img/card-fox.jpg')");
     } else if(levelNumber == 3){
-        cardPairs = ["hallon", "blabar", "bjorn", "hare", "radjur", "rav"];
+        cardPairs = ["hallon", "blabar", "blommor", "fagel", "skog", "svampar"];
         $(".card-front").css("background-image", "url('/assets/img/card-hare.jpg')");
     }
 
