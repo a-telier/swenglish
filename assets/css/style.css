@@ -62,6 +62,7 @@ section{
 #button-start{
     font-size: 3rem;
     margin-top: 5%;
+    background-color: rgba(44, 68, 84);
 }
 
 /*--------------------------------------------------screen2*/
@@ -80,16 +81,18 @@ section{
 #container-btn-back{
     height: 10%;
     width: 100%;
-    background-color: antiquewhite;
+    background-color: rgba(85, 127, 148);
     position: relative;
     display: block;
 }
 
 #button-back{
-    height: 40%;
+    height: 50%;
     width: 20%;
     float: left;
     text-align: center;
+    background-color:rgba(44, 68, 84);
+    color: white;
 }
 
 #container-screen-2{
@@ -97,11 +100,11 @@ section{
     width: 100%;
     text-align: center;
     display: block;
-    background-color: antiquewhite;
+    background-color: rgba(85, 127, 148);
 }
 
 #container-card{
-    height: 720px;
+    height: 580px;
     width: 80%;
 
     margin: 0 auto;
@@ -179,17 +182,13 @@ section{
 
 #button-back, #countdown{
     margin: 2px;
-    padding: 1px 1px 1px 1px;
+    padding: 2px 2px 2px 2px;
     font-size: 1.60em;
 }
 
 /*-------------------------flipping card-styling*/
 .flip{
     transform: rotateY(180deg);
-}
-
-.flip-again{
-   transform: rotateY(-180deg); 
 }
 
 /*--------------------------------------------------screen3*/
@@ -210,6 +209,7 @@ section{
 #button-try-again{
     font-size: 3rem;
     margin-top: 5%;
+    background-color: rgba(44, 68, 84);
 }
 
 #cover-image-end{
@@ -220,14 +220,15 @@ section{
 
 
 /*-----------------------------media queries*/
-/*ipad screens only - under 1000px width*/
-@media screen and (max-width: 1024px){
+/*ipad screens only - under 770px width*/
+@media screen and (max-width: 770px){
 #container-card{
     height: 600px;
+    width: 90%;
 }
 .container-card-each, .card-front, .card-back {
-    height: 146px;
-    width: 146px;
+    height: 140px;
+    width: 140px;
 }
 .cover-text{
     margin-top: 18%;
@@ -236,7 +237,7 @@ section{
 
 /*mobile screens - under 480px width*/
 @media screen and (max-width: 480px){
-#countDown{
+#countdown{
     width: 16%;
     height: 80%;
 }

@@ -36,21 +36,19 @@ const wordsPairedText = document.getElementById('wordsPaired-text')
 //Screen 1 - start menu to game
 $("#button-start").click(function() {
     $("#screen-1").fadeOut('slow');
-    initializeGame();
+    initializeGame(1);
 });
 
 //Screen 2 - from game back to start menu
 $("#button-back").click(function() {
     $("#screen-1").fadeIn('fast');
-    $(allCards).removeClass('cardSelected cardGreen');
-    initializeGame();
+    initializeGame(1);
 });
 
 //Screen 3 - from last screen back to game
 $("#button-try-again").click(function(){
     $("#screen-2").fadeIn('fast');
-    $(allCards).removeClass('cardSelected cardGreen');
-    initializeGame();
+    initializeGame(1);
 })
 
 //  COUNTDOWN TIMER
@@ -116,6 +114,7 @@ function initializeCards(levelNumber){
 
     //clears all the styling
     $(allCards).removeClass('cardSelected cardGreen');
+
     //logic depending on which level we are at
     if (levelNumber == 1){
         cardPairs = ["vaffla", "brod", "kladkakka", "kaffe", "kanelbulle", "appelpaj"];
@@ -218,7 +217,7 @@ for (const cardFront of allCardsFront) {
     });
 
     cardFront.addEventListener('mouseout', function() {
-        sleep(3000).then(() => {
+        sleep(2000).then(() => {
             if (!(
                 $(cardFront).prev().hasClass('cardSelected')
                 ||
