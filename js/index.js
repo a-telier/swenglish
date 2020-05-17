@@ -36,18 +36,21 @@ const wordsPairedText = document.getElementById('wordsPaired-text')
 //Screen 1 - start menu to game
 $("#button-start").click(function() {
     $("#screen-1").fadeOut('slow');
+    $(allCardsFront).removeClass('flip');
     initializeGame(1);
 });
 
 //Screen 2 - from game back to start menu
 $("#button-back").click(function() {
     $("#screen-1").fadeIn('fast');
+    $(allCardsFront).removeClass('flip');
     initializeGame(1);
 });
 
 //Screen 3 - from last screen back to game
 $("#button-try-again").click(function(){
     $("#screen-2").fadeIn('fast');
+    $(allCardsFront).removeClass('flip');
     initializeGame(1);
 })
 
