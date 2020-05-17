@@ -5,12 +5,12 @@ var cardPairs;
 var cardUrls;
 
 //countdown timer
-var time = 10;
+var time = 60;
 var timer;
 
 //counter of matched words
 var wordsPaired;
-
+var currentLevel;
 
 //  SELECTORS
 //selects all cards
@@ -35,21 +35,21 @@ const wordsPairedText = document.getElementById('wordsPaired-text')
 //Screen 1 - start menu to game
 $("#button-start").click(function() {
     $("#screen-1").fadeOut('slow');
-    initializeCards();
+    initializeGame();
 });
 
 //Screen 2 - from game back to start menu
 $("#button-back").click(function() {
     $("#screen-1").fadeIn('fast');
     $(allCards).removeClass('cardSelected cardGreen');
-    initializeCards();
+    initializeGame();
 });
 
 //Screen 3 - from last screen back to game
 $("#button-try-again").click(function(){
     $("#screen-2").fadeIn('fast');
     $(allCards).removeClass('cardSelected cardGreen');
-    initializeCards();
+    initializeGame();
 })
 
 //  COUNTDOWN TIMER
@@ -93,12 +93,34 @@ function uniqueRandomList(listLenght){
     return uniqueList;
 }
 
-function initializeCards(){
-    cardPlaceholders = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-    cardPairs = ["blabar", "brod", "hallon", "kaffe", "kanelbulle", "appelpaj"];
-    cardUrls = [];
-    levelNumber = 1;
+function initializeGame (){
+
+    //update countdown
+    time = 61;
+    updateCountDown();
+
+    //removing current countdown to not make a second one
+    clearInterval(timer);
+    timer = setInterval(updateCountDown, 1000);
+
     wordsPaired = 0;
+    //we are calling for parameter: level 1 to start
+    initializeCards(1);
+}
+
+function initializeCards(levelNumber){
+    cardPlaceholders = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    cardUrls = [];
+    currentLevel = levelNumber;
+
+    //clears all the styling
+    $(allCards).removeClass('cardSelected cardGreen');
+    //logic depending on which level we are at
+    if (levelNumber == 1){
+        cardPairs = ["blabar", "brod", "hallon", "kaffe", "kanelbulle", "appelpaj"];
+    } else if (levelNumber == 2){
+        cardPairs = ["alg", "anka", "bjorn", "hare", "radjur", "rav"];
+    }
 
     //this turns the cardPairs list into 8 elements
     cardPairs.forEach(cardPair => {
@@ -135,13 +157,6 @@ function initializeCards(){
             }
         });
     }
-    //update countdown
-    time = 11;
-    updateCountDown();
-
-    //removing current countdown to not make a second one
-    clearInterval(timer);
-    timer = setInterval(updateCountDown, 1000);
 };
 
 
@@ -170,7 +185,9 @@ for (const card of allCards) {
             $(card2).removeClass("cardSelected");
         }
         //this is how you win
-        if(wordsPaired == 6) {
+        if(wordsPaired == 6 && currentLevel == 1) {
+            initializeCards(2)
+        } else if (wordsPaired == 12) {
             $("#screen-2").fadeOut('slow');
             $("#screen-3").fadeIn('fast');
             console.log("You won!");
@@ -181,8 +198,6 @@ for (const card of allCards) {
 
 // STYLING EFFECTS
 // delays flip-back effect
-var Promise;
-
 function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
@@ -194,7 +209,7 @@ for (const cardFront of allCardsFront) {
     });
 
     cardFront.addEventListener('mouseout', function() {
-        sleep(2000).then(() => {
+        sleep(3000).then(() => {
             if (!(
                 $(cardFront).prev().hasClass('cardSelected')
                 ||
