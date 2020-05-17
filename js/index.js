@@ -61,7 +61,7 @@ function updateCountDown() {
         clearInterval(timer);
         $('#screen-2').fadeOut('fast');
         $('#screen-3').fadeIn('fast');
-        // $('#wordsPaired-text').text("Congratulations! You have matched " + `${wordsPaired}` + " words, do you want to try again?");
+        $('#wordsPaired-text').text("You have matched " + `${wordsPaired}` + " out of " +`${totalWordsToPair}`+ " words, do you want to try again?");
         // console.log("I have cleared the interval");
     }
 }
