@@ -118,8 +118,10 @@ function initializeCards(levelNumber){
     //logic depending on which level we are at
     if (levelNumber == 1){
         cardPairs = ["blabar", "brod", "hallon", "kaffe", "kanelbulle", "appelpaj"];
+        $(".card-front").css("background-image", "url('/assets/img/card-reindeer.jpg')");
     } else if (levelNumber == 2){
         cardPairs = ["alg", "anka", "bjorn", "hare", "radjur", "rav"];
+        $(".card-front").css("background-image", "url('/assets/img/card-fox.jpg')");
     }
 
     //this turns the cardPairs list into 8 elements

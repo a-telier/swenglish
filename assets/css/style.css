@@ -144,9 +144,9 @@ section{
     z-index: 4;
 }
 
-.card-front{
+/* .card-front{
     background-image: url("/assets/img/card-reindeer-with-frame.jpg");
-}
+} */
 
 .cardSelected{
     border: black;
@@ -156,7 +156,7 @@ section{
 }
 
 .cardGreen{
-    background-image: url("/assets/img/card-bird-with-frame.jpg") !important;
+    background-image: url("/assets/img/cardGreen-bird.jpg") !important;
     transition: 1s;
 }
 
