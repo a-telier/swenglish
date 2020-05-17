@@ -65,6 +65,10 @@ section{
     background-color: rgba(44, 68, 84);
 }
 
+.btn{
+    border: none;
+}
+
 /*--------------------------------------------------screen2*/
 #screen-2{
     height: 100%;

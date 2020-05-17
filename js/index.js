@@ -192,9 +192,11 @@ for (const card of allCards) {
         //this is how you win
         if(wordsPaired == 6 && currentLevel == 1) {
             initializeCards(2)
+            $(allCardsFront).removeClass('flip');
             $('#wordsPaired-text').text("You have matched " + `${wordsPaired}` + " words out of " + `${totalWordsToPair}` + ", do you want to try again?");
         } else if (wordsPaired == 12 && currentLevel == 2) {
             initializeCards(3)
+            $(allCardsFront).removeClass('flip');
             $('#wordsPaired-text').text("Good job! You have matched " + `${wordsPaired}` + " words out of " + `${totalWordsToPair}` + ", do you want to try again?");
         } else if (wordsPaired == 18 && currentLevel == 3) {
             $("#screen-2").fadeOut('slow');
