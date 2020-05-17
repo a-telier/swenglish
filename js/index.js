@@ -10,6 +10,7 @@ var timer;
 
 //counter of matched words
 var wordsPaired;
+var totalWordsToPair = 18;
 var currentLevel;
 
 //  SELECTORS
@@ -122,6 +123,9 @@ function initializeCards(levelNumber){
     } else if (levelNumber == 2){
         cardPairs = ["alg", "anka", "bjorn", "hare", "radjur", "rav"];
         $(".card-front").css("background-image", "url('/assets/img/card-fox.jpg')");
+    } else if(levelNumber == 3){
+        cardPairs = ["alg", "anka", "bjorn", "hare", "radjur", "rav"];
+        $(".card-front").css("background-image", "url('/assets/img/card-hare.jpg')");
     }
 
     //this turns the cardPairs list into 8 elements
@@ -189,11 +193,14 @@ for (const card of allCards) {
         //this is how you win
         if(wordsPaired == 6 && currentLevel == 1) {
             initializeCards(2)
-        } else if (wordsPaired == 12) {
+            $('#wordsPaired-text').text("You have matched " + `${wordsPaired}` + " words out of " + `${totalWordsToPair}` + ", do you want to try again?");
+        } else if (wordsPaired == 12 && currentLevel == 2) {
+            initializeCards(3)
+            $('#wordsPaired-text').text("Good job! You have matched " + `${wordsPaired}` + " words out of " + `${totalWordsToPair}` + ", do you want to try again?");
+        } else if (wordsPaired == 18 && currentLevel == 3) {
             $("#screen-2").fadeOut('slow');
             $("#screen-3").fadeIn('fast');
-            console.log("You won!");
-            $('#wordsPaired-text').text("Congratulations! You have matched " + `${wordsPaired}` + " words, do you want to try again?");
+            $('#wordsPaired-text').text("Congratulations! You have matched all " + `${wordsPaired}` + " words, do you want to try again?");
         }
     })
 }
