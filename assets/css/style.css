@@ -229,11 +229,15 @@ section{
 }
 
 #cover-image-end{
-    background-image: url("../img/you-win.jpg") no-repeat center center;
+    background-image: url("../img/you-win.jpg");
     background-size: cover;
     z-index: 0;
 }
 
+/*-----------------------------feedback to player*/
+#feedback{
+    color: white;
+}
 
 /*-----------------------------media queries*/
 /*ipad screens only - under 770px width*/

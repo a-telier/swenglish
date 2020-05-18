@@ -173,7 +173,7 @@ function initializeCards(levelNumber){
 //  CARDS GAMEPLAY INTERACTIONS
 //displays styling over clicked elements of type card
 for (const card of allCards) {
-    card.addEventListener('click doubletap', function() {
+    card.addEventListener('click', function() {
         $(this).toggleClass('cardSelected');
 
         const cardsSelected = document.querySelectorAll(".cardSelected")
@@ -187,9 +187,12 @@ for (const card of allCards) {
                 $(card1).removeClass("cardSelected").addClass("cardGreen");
                 $(card2).removeClass("cardSelected").addClass("cardGreen");
                 wordsPaired++;
+                $("#feedback").text("You have matched: " + `${wordsPaired}` + " words!");
                 // console.log("Good job - you have paired " + wordsPaired + " words!");
             } else {
-                console.log("Try again - this is not the right match for this card!");
+                $("#feedback").text();
+                $("#feedback").text("Not a match - try again!");
+                // console.log("Try again - this is not the right match for this card!");
             }
             $(card1).removeClass("cardSelected");
             $(card2).removeClass("cardSelected");
