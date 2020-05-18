@@ -167,10 +167,6 @@ section{
     z-index: 4;
 }
 
-/* .card-front{
-    background-image: url("/assets/img/card-reindeer-with-frame.jpg");
-} */
-
 .cardSelected{
     border: black;
     border-width: 2px;

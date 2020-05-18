@@ -121,21 +121,21 @@ function initializeCards(levelNumber){
     //logic depending on which level we are at
     if (levelNumber == 1){
         cardPairs = ["vaffla", "brod", "kladkakka", "kaffe", "kanelbulle", "appelpaj"];
-        $(".card-front").css("background-image", "url('../img/card-reindeer.jpg')");
+        $(".card-front").css("background-image", "url('assets/img/card-reindeer.jpg')");
     } else if (levelNumber == 2){
         cardPairs = ["alg", "anka", "bjorn", "hare", "radjur", "rav"];
-        $(".card-front").css("background-image", "url('../img/card-fox.jpg')");
+        $(".card-front").css("background-image", "url('assets/img/card-fox.jpg')");
     } else if(levelNumber == 3){
         cardPairs = ["hallon", "blabar", "blommor", "fagel", "skog", "svampar"];
-        $(".card-front").css("background-image", "url('../img/card-hare.jpg')");
+        $(".card-front").css("background-image", "url('assets/img/card-hare.jpg')");
     }
 
     //this turns the cardPairs list into 8 elements
     cardPairs.forEach(cardPair => {
         //later on could add level that upgrades ex. "url('/assets/img/level- + (level + 1) + cardPair + ".jpg')"
         //after cardPlaceholders.lenght has runned once
-        var cardImageUrl = "url('../img/level-" + levelNumber + "/" + cardPair + ".jpg')";
-        var cardTextUrl = "url('../img/level-" + levelNumber + "/"  + cardPair + "-text.jpg')";
+        var cardImageUrl = "url('assets/img/level-" + levelNumber + "/" + cardPair + ".jpg')";
+        var cardTextUrl = "url('assets/img/level-" + levelNumber + "/"  + cardPair + "-text.jpg')";
 
         cardUrls.push(cardImageUrl, cardTextUrl);
     });
