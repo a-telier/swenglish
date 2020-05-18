@@ -54,6 +54,12 @@ $("#button-try-again").click(function(){
     initializeGame(1);
 })
 
+
+//  SOUNDTRACK
+document.getElementById("audio");
+vid.loop = true;
+
+
 //  COUNTDOWN TIMER
 function updateCountDown() {
     time--;
@@ -68,6 +74,7 @@ function updateCountDown() {
         // console.log("I have cleared the interval");
     }
 }
+
 
 //  FUNCTIONS TO INITALIZE GAME
 function uniqueRandomList(listLenght){
@@ -214,6 +221,7 @@ for (const card of allCards) {
     })
 }
 
+
 // STYLING EFFECTS
 // delays flip-back effect
 function sleep (time) {
@@ -227,7 +235,7 @@ for (const cardFront of allCardsFront) {
     });
 
     cardFront.addEventListener('mouseout', function() {
-        sleep(2000).then(() => {
+        sleep(5000).then(() => {
             if (!(
                 $(cardFront).prev().hasClass('cardSelected')
                 ||
@@ -239,10 +247,3 @@ for (const cardFront of allCardsFront) {
         });
     });
 }
-
-//mobile double tap
-// We create a manager object, which is the same as Hammer(), but without the presetted recognizers. 
-var mc = new Hammer.Manager(myElement);
-// Tap recognizer with minimal 2 taps
-mc.add( new Hammer.Tap({ event: 'doubletap', taps: 2 }) );
-
