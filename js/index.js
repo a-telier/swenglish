@@ -217,11 +217,11 @@ function sleep (time) {
 
 // flip effect
 for (const cardFront of allCardsFront) {
-    cardFront.addEventListener('mouseover touchmove', function() {
+    cardFront.addEventListener('mouseover touchstart', function() {
         $(this).addClass('flip', 1000);
     });
 
-    cardFront.addEventListener('mouseout', function() {
+    cardFront.addEventListener('mouseout touchend', function() {
         sleep(2000).then(() => {
             if (!(
                 $(cardFront).prev().hasClass('cardSelected')
