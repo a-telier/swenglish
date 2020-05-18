@@ -58,10 +58,12 @@ $("#button-try-again").click(function(){
 function updateCountDown() {
     time--;
     countdown.innerHTML = `${time}`;
-    if (time == 0) {
+
+    if (time == 0 && levelNumber >= 1 ) {
         clearInterval(timer);
         $('#screen-2').fadeOut('fast');
         $('#screen-3').fadeIn('fast');
+
         $('#wordsPaired-text').text("You have matched " + `${wordsPaired}` + " out of " +`${totalWordsToPair}`+ " words, do you want to try again?");
         // console.log("I have cleared the interval");
     }
@@ -167,11 +169,12 @@ function initializeCards(levelNumber){
     }
 };
 
+$("#button-try-again").click(function(){
 
 //  CARDS GAMEPLAY INTERACTIONS
 //displays styling over clicked elements of type card
 for (const card of allCards) {
-    card.addEventListener('click', function() {
+    $(card).click(function() {
         $(this).toggleClass('cardSelected');
 
         const cardsSelected = document.querySelectorAll(".cardSelected")
@@ -217,7 +220,7 @@ function sleep (time) {
 
 // flip effect
 for (const cardFront of allCardsFront) {
-    cardFront.addEventListener('mouseover touchstart', function() {
+    cardFront.addEventListener('mouseover touchmove', function() {
         $(this).addClass('flip', 1000);
     });
 
@@ -234,6 +237,3 @@ for (const cardFront of allCardsFront) {
         });
     });
 }
-
-
-
