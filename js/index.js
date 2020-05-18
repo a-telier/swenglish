@@ -173,7 +173,7 @@ function initializeCards(levelNumber){
 //  CARDS GAMEPLAY INTERACTIONS
 //displays styling over clicked elements of type card
 for (const card of allCards) {
-    card.addEventListener('click taphold', function() {
+    card.addEventListener('click doubletap', function() {
         $(this).toggleClass('cardSelected');
 
         const cardsSelected = document.querySelectorAll(".cardSelected")
@@ -236,3 +236,10 @@ for (const cardFront of allCardsFront) {
         });
     });
 }
+
+//mobile double tap
+// We create a manager object, which is the same as Hammer(), but without the presetted recognizers. 
+var mc = new Hammer.Manager(myElement);
+// Tap recognizer with minimal 2 taps
+mc.add( new Hammer.Tap({ event: 'doubletap', taps: 2 }) );
+
