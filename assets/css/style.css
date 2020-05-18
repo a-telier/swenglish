@@ -13,7 +13,7 @@ section{
     margin-right: 0px;
     margin-bottom: 0px;
 
-    background-image: url("/assets/img/logo/swenglish-white.png");
+    background-image: url("../img/logo/swenglish-white.png");
     background-size: cover;
 
     z-index: 6;
@@ -45,7 +45,7 @@ section{
 }
 
 #cover-image-start{
-    background: url("/assets/img/sverige-flag.jpg") no-repeat center center;
+    background: url("../img/sverige-flag.jpg") no-repeat center center;
     background-size: cover;
     z-index: 5;
 }
@@ -179,7 +179,7 @@ section{
 }
 
 .cardGreen{
-    background-image: url("/assets/img/cardGreen-bird.jpg") !important;
+    background-image: url("../img/cardGreen-bird.jpg") !important;
     transition: 1s;
 }
 
@@ -233,7 +233,7 @@ section{
 }
 
 #cover-image-end{
-    background: url("/assets/img/you-win.jpg") no-repeat center center;
+    background: url("../img/you-win.jpg") no-repeat center center;
     background-size: cover;
     z-index: 0;
 }
