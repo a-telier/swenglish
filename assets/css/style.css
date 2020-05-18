@@ -19,6 +19,10 @@ section{
     z-index: 6;
 }
 
+#audio{
+    display: hidden;
+}
+
 /*--------------------------------------------------screen1*/
 #screen-1{
     display: block;
