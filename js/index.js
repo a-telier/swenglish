@@ -171,7 +171,7 @@ function initializeCards(levelNumber){
 //  CARDS GAMEPLAY INTERACTIONS
 //displays styling over clicked elements of type card
 for (const card of allCards) {
-    card.addEventListener('click', function() {
+    card.addEventListener('click tap', function() {
         $(this).toggleClass('cardSelected');
 
         const cardsSelected = document.querySelectorAll(".cardSelected")
@@ -217,7 +217,7 @@ function sleep (time) {
 
 // flip effect
 for (const cardFront of allCardsFront) {
-    cardFront.addEventListener('mouseover', function() {
+    cardFront.addEventListener('mouseover touchmove', function() {
         $(this).addClass('flip', 1000);
     });
 
