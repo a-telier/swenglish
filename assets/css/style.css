@@ -233,7 +233,7 @@ section{
 }
 
 #cover-image-end{
-    background: url("../img/you-win.jpg") no-repeat center center;
+    background-image: url("../img/you-win.jpg") no-repeat center center;
     background-size: cover;
     z-index: 0;
 }
