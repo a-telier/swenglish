@@ -59,7 +59,7 @@ function updateCountDown() {
     time--;
     countdown.innerHTML = `${time}`;
 
-    if (time == 0 && levelNumber >= 1 ) {
+    if (time == 0 && currentLevel >= 1 ) {
         clearInterval(timer);
         $('#screen-2').fadeOut('fast');
         $('#screen-3').fadeIn('fast');
@@ -169,12 +169,11 @@ function initializeCards(levelNumber){
     }
 };
 
-$("#button-try-again").click(function(){
 
 //  CARDS GAMEPLAY INTERACTIONS
 //displays styling over clicked elements of type card
 for (const card of allCards) {
-    $(card).click(function() {
+    card.addEventListener('click taphold', function() {
         $(this).toggleClass('cardSelected');
 
         const cardsSelected = document.querySelectorAll(".cardSelected")
@@ -218,13 +217,13 @@ function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 
-// flip effect
+// flip effect desktop
 for (const cardFront of allCardsFront) {
-    cardFront.addEventListener('mouseover touchmove', function() {
+    cardFront.addEventListener('mouseover', function() {
         $(this).addClass('flip', 1000);
     });
 
-    cardFront.addEventListener('mouseout touchend', function() {
+    cardFront.addEventListener('mouseout', function() {
         sleep(2000).then(() => {
             if (!(
                 $(cardFront).prev().hasClass('cardSelected')
@@ -232,7 +231,7 @@ for (const cardFront of allCardsFront) {
                 $(cardFront).prev().hasClass('cardGreen')
             )) {
                 $(this).removeClass('flip', 2000);
-                console.log('removeclass flip');
+                // console.log('removeclass flip');
             }
         });
     });
