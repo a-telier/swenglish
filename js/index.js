@@ -188,15 +188,14 @@ for (const card of allCards) {
                 $(card1).removeClass("cardSelected").addClass("cardGreen");
                 $(card2).removeClass("cardSelected").addClass("cardGreen");
                 wordsPaired++;
-                $("#feedback").text("You have matched: " + `${wordsPaired}` + " words!");
+                $("#feedback").text("You have matched: " + `${wordsPaired}` + " words!").css("animation", "showAndHide 5s");
                 // console.log("Good job - you have paired " + wordsPaired + " words!");
             } else {
-                $("#feedback").text();
-                $("#feedback").text("Not a match - try again!");
+                $("#feedback").text("Not a match - try again!").css("animation", "showAndHide 5s");
                 // console.log("Try again - this is not the right match for this card!");
             }
-            $(card1).removeClass("cardSelected");
-            $(card2).removeClass("cardSelected");
+            $(card1).removeClass("cardSelected").css("animation", "shake 0.3s");
+            $(card2).removeClass("cardSelected").css("animation", "shake 0.3s");
         }
         //this is how you win
         if(wordsPaired == 6 && currentLevel == 1) {
