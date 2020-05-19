@@ -240,6 +240,7 @@ section{
 
 /*-----------------------------feedback to player*/
 #feedback{
+    margin-top: 1%;
     color: white;
 }
 

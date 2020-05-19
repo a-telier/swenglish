@@ -54,11 +54,6 @@ $("#button-try-again").click(function(){
     initializeGame(1);
 })
 
-
-//  SOUNDTRACK
-document.getElementById("audio").autoplay;
-
-
 //  COUNTDOWN TIMER
 function updateCountDown() {
     time--;
@@ -229,12 +224,13 @@ function sleep (time) {
 
 // flip effect desktop
 for (const cardFront of allCardsFront) {
-    cardFront.addEventListener('mouseover touchStart', function() {
-        $(this).addClass('flip');
+    cardFront.addEventListener('mouseover', function() {
+        console.log("a flip event has been triggered");
+        $(this).addClass('flip', 2000);
     });
-
-    cardFront.addEventListener('mouseout touchEnd', function() {
-        sleep(5000).then(() => {
+    
+    cardFront.addEventListener('mouseout', function() {
+        sleep(3000).then(() => {
             if (!(
                 $(cardFront).prev().hasClass('cardSelected')
                 ||
@@ -246,9 +242,3 @@ for (const cardFront of allCardsFront) {
         });
     });
 }
-
-// We create a manager object, which is the same as Hammer(), but without the presetted recognizers. 
-var mc = new Hammer.Manager(card);
-
-// Tap recognizer with minimal 2 taps
-card.add( new Hammer.Tap({ event: 'doubletap', taps: 2 }) );
