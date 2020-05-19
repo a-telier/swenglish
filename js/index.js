@@ -37,6 +37,8 @@ const wordsPairedText = document.getElementById('wordsPaired-text')
 $("#button-start").click(function() {
     $("#screen-1").fadeOut('slow');
     $(allCardsFront).removeClass('flip');
+    var x = document.getElementById("audioHej");
+    x.play();
     initializeGame(1);
 });
 
