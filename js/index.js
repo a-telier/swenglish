@@ -44,7 +44,8 @@ $("#button-start").click(function() {
 $("#button-back").click(function() {
     $("#screen-1").fadeIn('fast');
     $(allCardsFront).removeClass('flip');
-    initializeGame(1);
+    // initializeGame(1);
+    clearInterval(timer);
 });
 
 //Screen 3 - from last screen back to game
@@ -58,6 +59,8 @@ $("#button-try-again").click(function(){
 function updateCountDown() {
     time--;
     countdown.innerHTML = `${time}`;
+
+    // console.log("Time left: " + time);
 
     if (time == 0 && currentLevel >= 1 ) {
         clearInterval(timer);
@@ -175,9 +178,11 @@ function initializeCards(levelNumber){
 //displays styling over clicked elements of type card
 for (const card of allCards) {
     card.addEventListener('click', function() {
-        $(this).toggleClass('cardSelected');
+        $(this).addClass('cardSelected');
 
         const cardsSelected = document.querySelectorAll(".cardSelected")
+
+        console.log("Number of cards selected: " + cardsSelected.length);
         
         if(cardsSelected.length == 2) {
             //You have selected 2 card - are they matching?
@@ -188,14 +193,14 @@ for (const card of allCards) {
                 $(card1).removeClass("cardSelected").addClass("cardGreen");
                 $(card2).removeClass("cardSelected").addClass("cardGreen");
                 wordsPaired++;
-                $("#feedback").text("You have matched: " + `${wordsPaired}` + " words!").css("animation", "showAndHide 5s");
+                $("#feedback").text("You have matched: " + `${wordsPaired}` + " words(s)!").css("animation", "showAndHide 5s");
                 // console.log("Good job - you have paired " + wordsPaired + " words!");
             } else {
+                $(card1).removeClass("cardSelected").css("animation", "shake 0.3s");
+                $(card2).removeClass("cardSelected").css("animation", "shake 0.3s");
                 $("#feedback").text("Not a match - try again!").css("animation", "showAndHide 5s");
                 // console.log("Try again - this is not the right match for this card!");
             }
-            $(card1).removeClass("cardSelected").css("animation", "shake 0.3s");
-            $(card2).removeClass("cardSelected").css("animation", "shake 0.3s");
         }
         //this is how you win
         if(wordsPaired == 6 && currentLevel == 1) {
@@ -210,6 +215,7 @@ for (const card of allCards) {
             $("#screen-2").fadeOut('slow');
             $("#screen-3").fadeIn('fast');
             $('#wordsPaired-text').text("Congratulations! You have matched all " + `${wordsPaired}` + " words, do you want to try again?");
+            wordsPaired = 0;
         }
     })
 }
@@ -224,20 +230,35 @@ function sleep (time) {
 // flip effect desktop
 for (const cardFront of allCardsFront) {
     cardFront.addEventListener('mouseover', function() {
-        console.log("a flip event has been triggered");
+        console.log("a mouseover event has been triggered, resulting in a flip");
         $(this).addClass('flip', 2000);
     });
     
     cardFront.addEventListener('mouseout', function() {
-        sleep(3000).then(() => {
+        console.log("a mouseout event has been triggered, resulting in a flip back after 3 sec");
+
+        setTimeout(function(){
+            console.log("3 seconds have passed, executing flip back");
             if (!(
                 $(cardFront).prev().hasClass('cardSelected')
                 ||
                 $(cardFront).prev().hasClass('cardGreen')
             )) {
-                $(this).removeClass('flip', 2000);
-                // console.log('removeclass flip');
+                $(cardFront).removeClass('flip');
+                console.log('removeclass flip');
             }
-        });
+        }, 3000);
+
+        // sleep(3000).then(() => {
+        //     console.log("3 seconds have passed, executing flip back if");
+        //     if (!(
+        //         $(cardFront).prev().hasClass('cardSelected')
+        //         ||
+        //         $(cardFront).prev().hasClass('cardGreen')
+        //     )) {
+        //         $(this).removeClass('flip', 2000);
+        //         console.log('removeclass flip');
+        //     }
+        // });
     });
 }
