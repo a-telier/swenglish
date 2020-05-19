@@ -179,7 +179,7 @@ function initializeCards(levelNumber){
 //  CARDS GAMEPLAY INTERACTIONS
 //displays styling over clicked elements of type card
 for (const card of allCards) {
-    card.addEventListener('click doubletap', function() {
+    card.addEventListener('click', function() {
         $(this).toggleClass('cardSelected');
 
         const cardsSelected = document.querySelectorAll(".cardSelected")
@@ -230,7 +230,7 @@ function sleep (time) {
 // flip effect desktop
 for (const cardFront of allCardsFront) {
     cardFront.addEventListener('mouseover touchStart', function() {
-        $(this).addClass('flip', 1000);
+        $(this).addClass('flip');
     });
 
     cardFront.addEventListener('mouseout touchEnd', function() {
