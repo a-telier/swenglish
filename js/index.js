@@ -196,11 +196,18 @@ for (const card of allCards) {
                 $("#feedback").text("You have matched: " + `${wordsPaired}` + " words(s)!").css("animation", "showAndHide 5s");
                 // console.log("Good job - you have paired " + wordsPaired + " words!");
             } else {
-                $(card1).removeClass("cardSelected").css("animation", "shake 0.3s");
-                $(card2).removeClass("cardSelected").css("animation", "shake 0.3s");
+                $(card1).removeClass("cardSelected animationShake");
+                $(card2).removeClass("cardSelected animationShake");
+
+                requestAnimationFrame(function() {
+                    $(card1).addClass("animationShake");
+                    $(card2).addClass("animationShake");
+                });
+
                 $("#feedback").text("Not a match - try again!").css("animation", "showAndHide 5s");
                 // console.log("Try again - this is not the right match for this card!");
             }
+
         }
         //this is how you win
         if(wordsPaired == 6 && currentLevel == 1) {
@@ -220,12 +227,7 @@ for (const card of allCards) {
     })
 }
 
-
 // STYLING EFFECTS
-// delays flip-back effect
-function sleep (time) {
-  return new Promise((resolve) => setTimeout(resolve, time));
-}
 
 // flip effect desktop
 for (const cardFront of allCardsFront) {
@@ -248,17 +250,5 @@ for (const cardFront of allCardsFront) {
                 console.log('removeclass flip');
             }
         }, 3000);
-
-        // sleep(3000).then(() => {
-        //     console.log("3 seconds have passed, executing flip back if");
-        //     if (!(
-        //         $(cardFront).prev().hasClass('cardSelected')
-        //         ||
-        //         $(cardFront).prev().hasClass('cardGreen')
-        //     )) {
-        //         $(this).removeClass('flip', 2000);
-        //         console.log('removeclass flip');
-        //     }
-        // });
     });
 }

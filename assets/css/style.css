@@ -325,3 +325,8 @@ section{
   from {display: block;}
   to {display: none;}
 }
+
+.animationShake {
+  animation-name: shake;
+  animation-duration: 0.3s;
+}
