@@ -11,10 +11,10 @@ Ideally, this site’s primary users are expats with little time like myself or 
 
 As a player:
 1.   _*I can start the game*_
-    *   I am able to start the game by clicking on the ‘START GAME’ button.
-    *   I can then see ‘screen-1’ disappearing and ‘screen-2’ appearing.
-    *   Once in screen-2, I can see a batch of 12 cards of the same type facing down. Ex. level 1 has a reindeer on the front of the card.
-    *   I can see a countdown timer on the top right corner that starts as soon as ‘screen-2 is loaded. The counter starts at 60 and will count down to 0. If the counter reaches 0 the game is over.
+   *  I am able to start the game by clicking on the ‘START GAME’ button.
+   *  I can then see ‘screen-1’ disappearing and ‘screen-2’ appearing.
+   *  Once in screen-2, I can see a batch of 12 cards of the same type facing down. Ex. level 1 has a reindeer on the front of the card.
+   *  I can see a countdown timer on the top right corner that starts as soon as ‘screen-2 is loaded. The counter starts at 60 and will count down to 0. If the counter reaches 0 the game is over.
 
 2.   _*I can interact with the cards*_
    1. *Flipping cards*
@@ -49,6 +49,7 @@ As a player:
 8. *I can restart the game*
     *   Once in ‘screen-3’ and regardless of whether I have win or not, I am able to start the game again by clicking on the button ‘TRY AGAIN’ which will take me back to ‘screen-2’ and initialize level 1 cards.
  
+Mockups of the design process can be found here: https://drive.google.com/open?id=1VwXebNk9Xl_hdpnm_YmLz9f9v8Ovr5VX
 
 ## Features
 The project consists of 3 different screens which the player can interact with. Each of the screens serves a role for the user - introduction, play time and outcome.
@@ -144,7 +145,7 @@ _*Tracking code works properly*_
 4. Make sure to select ‘master’ as the main branch and click on save. 
 
 This game is currently available at: https://a-telier.github.io/swenglish/
-
+The live site reflects the latest committed version.
 
 ## Credits
 _*Content*_
