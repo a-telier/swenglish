@@ -17,17 +17,17 @@ As a player:
     *   I can see a countdown timer on the top right corner that starts as soon as ‘screen-2 is loaded. The counter starts at 60 and will count down to 0. If the counter reaches 0 the game is over.
 
 2.   _*I can interact with the cards*_
-    1. *Flipping cards*
-        *   To display the content behind the cards, I can hover over the cards on the desktop or click once over the cards in mobile. This will trigger the card to flip face up and reveal either an image or text. After 3 seconds, the card will return to its initial state.
-        *   I can repeat the action to get the cards to flip as many times as needed within the duration of the game.
+   1. *Flipping cards*
+      *   To display the content behind the cards, I can hover over the cards on the desktop or click once over the cards in mobile. This will trigger the card to flip face up and reveal either an image or text. After 3 seconds, the card will return to its initial state.
+       *   I can repeat the action to get the cards to flip as many times as needed within the duration of the game.
 
-    2. *Selecting cards*
-        *   I can select a card by clicking over it once on desktop and twice on mobile. I can select up to 2 cards each time. The first card I have selected will remain selected - which I can see as it will have a black border around it - until I have selected a second card.
+   2. *Selecting cards*
+       *   I can select a card by clicking over it once on desktop and twice on mobile. I can select up to 2 cards each time. The first card I have selected will remain selected - which I can see as it will have a black border around it - until I have selected a second card.
 
-    3. *Matching cards*
-        *   If the combination is correct both cards will display a green bird and the text ‘bra jobbat’ or ‘good job’.
-        *   If the combination is not correct the cards will be unselected - which I can see as they no longer have a black border around them.
-        *   Once two cards are matched, I am no longer able to select the cards and they stay face down displaying a green bird, until the remaining 5 combinations have been matched or the timer has gone out.
+   3. *Matching cards*
+       *   If the combination is correct both cards will display a green bird and the text ‘bra jobbat’ or ‘good job’.
+       *   If the combination is not correct the cards will be unselected - which I can see as they no longer have a black border around them.
+       *   Once two cards are matched, I am no longer able to select the cards and they stay face down displaying a green bird, until the remaining 5 combinations have been matched or the timer has gone out.
 
 3. *I can move to the next level*
     *   By matching the first 6 images to their corresponding translations, I can move to the second level up to a total of 3 levels. Each time I start a new level, I can see different styling in the ‘face down’ cards and new card combinations being displayed as I advance in the game. Each level has a unique combination of cards.
@@ -61,62 +61,97 @@ _*Existing Features*_
 4. Initialize up to 3 levels - allows the player to receive a new batch of 6 images and 6 translations each time the previous 6 combinations have been matched. Each level has a specific set of combinations which are placed at random each time the level is initialized. 
 5. Countdown - allows the player to see a countdown being displayed at the top right of the game in ‘screen-2’. The countdown starts at 60 and counts down to 0. If the countdown has run out, the game ends and ‘screen-3’ fades in.
 6. Score - allows the player to see how many cards have been matched during the duration of the gameplay whenever ‘screen-3’ is accessed. ‘Screen-3’ can be accessed either by completing all 18 combinations and passing all 3 levels or by letting the timer run out.
+7. Analytics tracking - allows to collect information about how many people have visited the site or completed the game.
 
 _*Features Left to Implement*_
 1. Additional levels - allows the player to continue playing the game by accessing more levels with each different card combinations to match.
-2. Pick-up where I left off - allows the player to go back to the last completed level by clicking on a button in ‘screen-3’.
+2. Pick-up where I left off and level selector - allows the player to go back to the last completed level by clicking on a button in ‘screen-3’.
 3. Share your score - allows the player to share on their social network how many new words they have learned.
-4. Recommend to a friend - allows the player to share the game with a friend by clicking on a button ‘Recommend to a friend’.
-5. Upload your own combinations - allows the player to upload their own pictures and translations to a database. After approval by the administrator, the combinations are added to a new level.
+4. Upload your own combinations - allows the player to upload their own pictures and translations to a database. After approval by the administrator, the combinations are added to a new level.
 
 
 ## Technologies Used
 *Languages*
-*   [HTML] (https://developer.mozilla.org/sv-SE/docs/Web/HTML): used to create the backbone and structure of the site.
-*   [CSS] (https://developer.mozilla.org/en-US/docs/Web/CSS): used to customize the visual outcome of the site. As well as to ensure via @media queries that the content displays nicely in all devices.
-*   [Javascript] (https://www.javascript.com/): used to define the game mechanics, navigation as well as the interactions with the different html and DOM elements.
-*   Gitpod: used as the coding environment for this project.
-*   Github: used to store all repositories for this project, as well as to deploy the site via GitPages.
+*   HTML:
+Used to create the backbone and structure of the site.
+*   CSS:
+Used to customize the visual outcome of the site.
+As well as to ensure via @media queries that the content displays nicely in all devices.
+*   Javascript:
+Used to define the game mechanics, navigation as well as the interactions with the different html and DOM elements.
+
 
 *Libraries*
-*   [JQuery] (https://jquery.com/): used to be able to select elements in the HTML code based on their styling, and then modify them in Javascript.
-*   [Bootstrap] (https://getbootstrap.com/): used to provide key structural components such as Jumbotron, containers, navbar and carousel features, making the development process faster.
-*   Hammer (in progress):
-The library is currently installed but not in use. 
+*   JQuery:
+Used to be able to select elements in the HTML code based on their styling, and then modify them in Javascript.
+*   Bootstrap:
+Used to provide key structural components such as Jumbotron, containers, navbar and carousel features, making the development process faster.
+*   HammerJS (in progress):
+The purpose of using this library was to enhance mobile experience of the game via a library of mobile-first animations and triggers. Today, the library is installed/linked, but not in use.
 
 *Other tools*
+*   Gitpod:
+Used as the coding environment for this project.
+*   Github:
+Used to store all repositories for this project, as well as to deploy the site via GitPages.
 *   W3schools:
 Used to clarify and solidify knowledge acquired during the course.
 *   Stack Overflow:
 Used as support when troubleshooting and fixing bugs.
-*   [Canva] (https://www.canva.com/): used to edit all of the graphic material used on this site.
-*   [Google_Analytics] (Google Analyticsanalytics.google.com › analytics › web): used to track users behavior and traffic to the site.
-*   [Google_tag_manager] (Google Tag Managertagmanager.google.com) (in-progress): used to add custom triggers to track the players' behavior.
+*   Canva Online Editor:
+Used to edit all of the graphic material used on this site.
+*   Google Analytics:
+Used to track users behavior and traffic to the site.
+*   Google tag manager (in progress):
+Used to add custom triggers to track the players' specific behavior (ex. click of the start button). Today the code is installed in the header and body elements, but it is not currently in use.
 
  
 ## Testing
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
-Contact form:
-Go to the "Contact Us" page
-Try to submit the empty form and verify that an error message about the required fields appears
-Try to submit the form with an invalid email address and verify that a relevant error message appears
-Try to submit the form with all inputs valid and verify that a success message appears.
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+The code has been tested via the below online validators and no major errors have been raised.
+
+- [W3C Markup Validation Service](https://validator.w3.org/) for HTML;
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) for CSS;
+- [JSHint](https://jshint.com/) for JavaScript.
+
+_*The content resizes properly*_
+The code has been tested via Google Chrome Developer Tools in several mobile devices from iphone 5s to ipad Pro. In addition, the resizing and game-play has also been tested in real devices both iOs and Android (iPhone 7 and Samsung Galaxy).
+
+_*Game play works properly*_
+*As a player, on desktop:*
+   1. I am able to access the game by clicking on the start button.
+   2. As soon as I start the game, music starts playing. 12 cards are displayed facing down and the timer starts counting down.
+   3. I am able to hover over the cards to see their contents.
+   4. I am able to interact with the cards by clicking on them. If the answer is correct, the card styling turns to a green bird, while if the answer is wrong a shake animation is displayed.
+   5. A message is displayed at the bottom of the screen each time that I interact with the cards.
+   6. If any cards have been matched, the text at the bottom updates and displays the number of words matched.
+   7. If I manage to move to the next levels, the cards styling adjusts according to the level, and the new batch of cards is placed randomly.
+   7. After the timer has run out, I am redirected to the last screen where I am provided with my score and the option to TRY AGAIN.
+   8. I can click on TRY AGAIN, which restarts the game from level 1 and see how far I can get. The counter is back to 0, the timer restarts and the new batch of cards is placed randomly again.
+   
+*As a player, on mobile:*
+Most of the steps above are the same in mobile, however when using touch screens (most devices today) the trigger set is a tap event. The difference in UI:
+   1. To interact with the cards, I can tap once to reveal the card's contents and then tap one more time while the card is facing up to select the card and its potential match.
+
+_*Tracking code works properly*_
+   * Once deployed, the site started tracking visitors reflected on Google Analytics traffic.
+   * This was tested from both mobile and desktop devices.
 
 
 ## Deployment
-To deploy this site, you must go into Github and select the Settings tab, then scroll down to the section named Github Pages. Then select ‘master’ as the main branch and click on save. 
-My site is currently hosted under the following url: https://alex-rabi.github.io/swenglish/
+1. To deploy this site, one must go into Github.
+2. Select the Settings tab from the menu.
+3. Scroll down to the section named Github Pages. 
+4. Make sure to select ‘master’ as the main branch and click on save. 
+
+This game is currently available at: https://a-telier.github.io/swenglish/
 
 
 ## Credits
 _*Content*_
 *   w3schools:
-A lot of the different javascript elements have been inspired from w3schools libraries.
+Used for support to solidify learnings, clarify syntax of different languages as well as to browse through different CSS styling options such as animations or media queries.
+*  Fellow student bravoalpha79:
+Project MindGym which I found via slack served as inspiration when it comes to organizing my documentation and readme file.
 
 _*Media*_
 *   Unsplash:
@@ -128,4 +163,4 @@ Provided the music in the game.
 
 
 ## Acknowledgements
-I want to thank my partner Jonatan S. for his unconditional support.
+I want to thank the Unsplash community for their beautiful graphic material, as well as my partner Jonatan S.J. for his patience helping me test the game and for his unconditional support.
