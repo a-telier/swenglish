@@ -336,8 +336,8 @@ section{
 #currentLevel{
     font-size: 0.8em;
 }
-#a-telier{
-    font-size: 1em;
+.a-telier{
+    font-size: 1.2em;
 }
 }
 
