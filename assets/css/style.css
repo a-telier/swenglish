@@ -2,7 +2,7 @@ section{
     width: 100%;
     height: 100%;
     font-family: 'Pangolin', cursive;
-}
+    }
 
 #swenglish-logo{
     height: 100px;
@@ -20,7 +20,7 @@ section{
 }
 
 #audio{
-    display: hidden;
+    display: none;
 }
 
 /*--------------------------------------------------screen1*/
