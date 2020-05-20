@@ -137,9 +137,12 @@ function initializeCards(levelNumber){
     } else if (levelNumber == 2){
         cardPairs = ["alg", "anka", "bjorn", "hare", "radjur", "rav"];
         $(".card-front").css("background-image", "url('assets/img/card-fox.jpg')");
+        $("#currentLevel").text("Level: " + `${levelNumber}` + " - nordic animals!");
+
     } else if(levelNumber == 3){
         cardPairs = ["hallon", "blabar", "blommor", "fagel", "skog", "svampar"];
         $(".card-front").css("background-image", "url('assets/img/card-hare.jpg')");
+        $("#currentLevel").text("Level: " + `${levelNumber}` + " - foraging in Sweden!");
     }
 
     //this turns the cardPairs list into 8 elements
