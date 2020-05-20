@@ -10,43 +10,43 @@ As an expat in Sweden I have found that many expats do not have time to learn th
 Ideally, this site’s primary users are expats with little time like myself or users curious about Sweden and the swedish language.
 
 As a player:
-*   _*I can start the game*_
+1.   _*I can start the game*_
     *   I am able to start the game by clicking on the ‘START GAME’ button.
     *   I can then see ‘screen-1’ disappearing and ‘screen-2’ appearing.
     *   Once in screen-2, I can see a batch of 12 cards of the same type facing down. Ex. level 1 has a reindeer on the front of the card.
     *   I can see a countdown timer on the top right corner that starts as soon as ‘screen-2 is loaded. The counter starts at 60 and will count down to 0. If the counter reaches 0 the game is over.
 
-*   _*I can interact with the cards*_
-1. *Flipping cards*
-    *   To display the content behind the cards, I can hover over the cards on the desktop or click once over the cards in mobile. This will trigger the card to flip face up and reveal either an image or text. After 3 seconds, the card will return to its initial state.
-    *   I can repeat the action to get the cards to flip as many times as needed within the duration of the game.
+2.   _*I can interact with the cards*_
+    1. *Flipping cards*
+        *   To display the content behind the cards, I can hover over the cards on the desktop or click once over the cards in mobile. This will trigger the card to flip face up and reveal either an image or text. After 3 seconds, the card will return to its initial state.
+        *   I can repeat the action to get the cards to flip as many times as needed within the duration of the game.
 
-2. *Selecting cards*
-    *   I can select a card by clicking over it once on desktop and twice on mobile. I can select up to 2 cards each time. The first card I have selected will remain selected - which I can see as it will have a black border around it - until I have selected a second card.
+    2. *Selecting cards*
+        *   I can select a card by clicking over it once on desktop and twice on mobile. I can select up to 2 cards each time. The first card I have selected will remain selected - which I can see as it will have a black border around it - until I have selected a second card.
 
-3. *Matching cards*
-    *   If the combination is correct both cards will display a green bird and the text ‘bra jobbat’ or ‘good job’.
-    *   If the combination is not correct the cards will be unselected - which I can see as they no longer have a black border around them.
-    *   Once two cards are matched, I am no longer able to select the cards and they stay face down displaying a green bird, until the remaining 5 combinations have been matched or the timer has gone out.
+    3. *Matching cards*
+        *   If the combination is correct both cards will display a green bird and the text ‘bra jobbat’ or ‘good job’.
+        *   If the combination is not correct the cards will be unselected - which I can see as they no longer have a black border around them.
+        *   Once two cards are matched, I am no longer able to select the cards and they stay face down displaying a green bird, until the remaining 5 combinations have been matched or the timer has gone out.
 
-4. *I can move to the next level*
+3. *I can move to the next level*
     *   By matching the first 6 images to their corresponding translations, I can move to the second level up to a total of 3 levels. Each time I start a new level, I can see different styling in the ‘face down’ cards and new card combinations being displayed as I advance in the game. Each level has a unique combination of cards.
     *   I can display, select or match cards with the same commands/actions regardless of the level.
 
-5. *I can go back to the main menu*
+4. *I can go back to the main menu*
     *   When in ‘screen-2’, I am able to go back to ‘screen-1’ by clicking on the button with the text ‘BACK’ in the top left corner.
 
-6. *I can then start the game again*
+5. *I can then start the game again*
     *   By clicking on the ‘START GAME’ button again, I will see level 1 initialize again. Any cards we have previously selected or matched will not be registered, and the countdown timer will restart to 60.
     *   I can see a new set of 12 cards ‘face up’ and by hovering over I can see that the images and text combinations corresponding to level 1 have taken a new placement/order.
 
-7. *I can win the game*
+6. *I can win the game*
     *   By completing all 3 levels and matching a total of 18 different combinations, I am able to win the game. At this point, ‘screen-3 is displayed’ presenting a message to the player saying ‘congratulations!’.
 
-8. *I can run out of time*
+7. *I can run out of time*
     *   Regardless of the level I am in, if the counter is down to 0 and I have not matched all 18 combinations, ‘screen-3’ will appear and the text will display the number of cards I have matched.
 
-9. *I can restart the game*
+8. *I can restart the game*
     *   Once in ‘screen-3’ and regardless of whether I have win or not, I am able to start the game again by clicking on the button ‘TRY AGAIN’ which will take me back to ‘screen-2’ and initialize level 1 cards.
  
 
@@ -72,37 +72,26 @@ _*Features Left to Implement*_
 
 ## Technologies Used
 *Languages*
-*   HTML:
-Used to create the backbone and structure of the site.
-*   CSS:
-Used to customize the visual outcome of the site.
-As well as to ensure via @media queries that the content displays nicely in all devices.
-*   Javascript:
-Used to define the game mechanics, navigation as well as the interactions with the different html and DOM elements.
-*   Gitpod:
-Used as the coding environment for this project.
-*   Github:
-Used to store all repositories for this project, as well as to deploy the site via GitPages.
+*   [HTML] (https://developer.mozilla.org/sv-SE/docs/Web/HTML): used to create the backbone and structure of the site.
+*   [CSS] (https://developer.mozilla.org/en-US/docs/Web/CSS): used to customize the visual outcome of the site. As well as to ensure via @media queries that the content displays nicely in all devices.
+*   [Javascript] (https://www.javascript.com/): used to define the game mechanics, navigation as well as the interactions with the different html and DOM elements.
+*   Gitpod: used as the coding environment for this project.
+*   Github: used to store all repositories for this project, as well as to deploy the site via GitPages.
 
 *Libraries*
-*   JQuery:
-Used to be able to select elements in the HTML code based on their styling, and then modify them in Javascript.
-*   Hammer:
-Used to enable the double tap effect on mobile.
-*   Bootstrap:
-Used to provide key structural components such as Jumbotron, containers, navbar and carousel features, making the development process faster.
+*   [JQuery] (https://jquery.com/): used to be able to select elements in the HTML code based on their styling, and then modify them in Javascript.
+*   [Bootstrap] (https://getbootstrap.com/): used to provide key structural components such as Jumbotron, containers, navbar and carousel features, making the development process faster.
+*   Hammer (in progress):
+The library is currently installed but not in use. 
 
 *Other tools*
 *   W3schools:
 Used to clarify and solidify knowledge acquired during the course.
 *   Stack Overflow:
 Used as support when troubleshooting and fixing bugs.
-*   Canva:
-Used to edit all of the graphic material used on this site.
-*   Google Analytics:
-Used to track users behavior and traffic to the site.
-*   Google tag manager:
-Used to add custom triggers to track the players' behavior.
+*   [Canva] (https://www.canva.com/): used to edit all of the graphic material used on this site.
+*   [Google_Analytics] (Google Analyticsanalytics.google.com › analytics › web): used to track users behavior and traffic to the site.
+*   [Google_tag_manager] (Google Tag Managertagmanager.google.com) (in-progress): used to add custom triggers to track the players' behavior.
 
  
 ## Testing
@@ -126,7 +115,8 @@ My site is currently hosted under the following url: https://alex-rabi.github.io
 
 ## Credits
 _*Content*_
-*   The function in javascript called ‘sleep’ which delays the flip effect was copied from Dan Dascalescu’s comment in Stack Overflow.
+*   w3schools:
+A lot of the different javascript elements have been inspired from w3schools libraries.
 
 _*Media*_
 *   Unsplash:
