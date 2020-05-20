@@ -5,7 +5,7 @@ var cardPairs;
 var cardUrls;
 
 //countdown timer
-var time = 60;
+var time = 90;
 var timer;
 
 //counter of matched words
@@ -108,7 +108,7 @@ function uniqueRandomList(listLenght){
 function initializeGame (){
 
     //update countdown
-    time = 61;
+    time = 91;
     updateCountDown();
 
     //removing current countdown to not make a second one
@@ -132,6 +132,8 @@ function initializeCards(levelNumber){
     if (levelNumber == 1){
         cardPairs = ["vaffla", "brod", "kladkakka", "kaffe", "kanelbulle", "appelpaj"];
         $(".card-front").css("background-image", "url('assets/img/card-reindeer.jpg')");
+        $("#currentLevel").text("Level: " + `${levelNumber}` + " - swedish fika!");
+        
     } else if (levelNumber == 2){
         cardPairs = ["alg", "anka", "bjorn", "hare", "radjur", "rav"];
         $(".card-front").css("background-image", "url('assets/img/card-fox.jpg')");

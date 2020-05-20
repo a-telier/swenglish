@@ -18,16 +18,16 @@ As a player:
 
 2.   _*I can interact with the cards*_
    1. *Flipping cards*
-      *   To display the content behind the cards, I can hover over the cards on the desktop or click once over the cards in mobile. This will trigger the card to flip face up and reveal either an image or text. After 3 seconds, the card will return to its initial state.
-       *   I can repeat the action to get the cards to flip as many times as needed within the duration of the game.
+    *   To display the content behind the cards, I can hover over the cards on the desktop or click once over the cards in mobile. This will trigger the card to flip face up and reveal either an image or text. After 3 seconds, the card will return to its initial state.
+    *   I can repeat the action to get the cards to flip as many times as needed within the duration of the game.
 
    2. *Selecting cards*
-       *   I can select a card by clicking over it once on desktop and twice on mobile. I can select up to 2 cards each time. The first card I have selected will remain selected - which I can see as it will have a black border around it - until I have selected a second card.
+    *   I can select a card by clicking over it once on desktop and twice on mobile. I can select up to 2 cards each time. The first card I have selected will remain selected - which I can see as it will have a black border around it - until I have selected a second card.
 
    3. *Matching cards*
-       *   If the combination is correct both cards will display a green bird and the text ‘bra jobbat’ or ‘good job’.
-       *   If the combination is not correct the cards will be unselected - which I can see as they no longer have a black border around them.
-       *   Once two cards are matched, I am no longer able to select the cards and they stay face down displaying a green bird, until the remaining 5 combinations have been matched or the timer has gone out.
+    *   If the combination is correct both cards will display a green bird and the text ‘bra jobbat’ or ‘good job’.
+    *   If the combination is not correct the cards will be unselected - which I can see as they no longer have a black border around them.
+    *   Once two cards are matched, I am no longer able to select the cards and they stay face down displaying a green bird, until the remaining 5 combinations have been matched or the timer has gone out.
 
 3. *I can move to the next level*
     *   By matching the first 6 images to their corresponding translations, I can move to the second level up to a total of 3 levels. Each time I start a new level, I can see different styling in the ‘face down’ cards and new card combinations being displayed as I advance in the game. Each level has a unique combination of cards.
@@ -163,4 +163,4 @@ Provided the music in the game.
 
 
 ## Acknowledgements
-I want to thank the Unsplash community for their beautiful graphic material, as well as my partner Jonatan S.J. for his patience helping me test the game and for his unconditional support.
+I want to thank the Unsplash community for their beautiful graphic material, and especially I would like to thank my partner Jonatan S.J. his unconditional support.
