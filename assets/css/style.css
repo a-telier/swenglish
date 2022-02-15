@@ -8,10 +8,11 @@ section{
     height: 100px;
     width: 300px;
 
-    position: relative;
-    float: right;
-    margin-right: 0px;
-    margin-bottom: 0px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    /* margin-right: 0px;
+    margin-bottom: 0px; */
 
     background-image: url("../img/logo/swenglish-white.png");
     background-size: cover;
