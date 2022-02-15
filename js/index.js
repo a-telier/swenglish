@@ -231,13 +231,12 @@ for (const card of allCards) {
             $("#screen-2").fadeOut('slow');
             $("#screen-3").fadeIn('fast');
             $('#wordsPaired-text').text("Congratulations! You have matched all " + `${wordsPaired}` + " words, do you want to try again?");
-            wordsPaired = 0;
+            // wordsPaired = 0;
         }
     })
 }
 
 // STYLING EFFECTS
-
 // flip effect desktop
 for (const cardFront of allCardsFront) {
     cardFront.addEventListener('mouseover', function() {
